@@ -8,7 +8,7 @@ public class CameraAnchor : NetworkBehaviour
         base.OnNetworkSpawn();
         if (IsOwner)
         {
-            FindObjectOfType<CinemachineVirtualCamera>().Follow = transform;
+            FindObjectOfType<CinemachineVirtualCamera>().EnsureNotNull().Follow = transform;
         }
     }
 }

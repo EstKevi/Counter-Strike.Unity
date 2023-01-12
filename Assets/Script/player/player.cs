@@ -1,7 +1,9 @@
 using System;
+using System.Numerics;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 [RequireComponent(typeof(NetworkTransform))]
 [RequireComponent(typeof(CharacterController))]
@@ -12,11 +14,15 @@ public class player : NetworkBehaviour
     
     private IInput input = new PlugInput();
     private CharacterController characterController;
-    
+
+    private NetworkVariable<Vector3> move = new(
+        Vector3.zero,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner);
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>().EnsureNotNull();
-        input.EnsureNotNull();
     }
 
     public override void OnNetworkSpawn()
@@ -30,11 +36,16 @@ public class player : NetworkBehaviour
 
     private void Update()
     {
-        var move = new Vector3(input.DirectionX(), 0, input.DirectionZ());
-        
         if (IsOwner)
         {
-            characterController.Move(move * (speed * Time.deltaTime));
+            var directionVector = new Vector3(input.DirectionX(), 0, input.DirectionZ());
+
+            move.Value = directionVector;
+        }
+        
+        if (IsServer)
+        {
+            characterController.Move(move.Value * (speed * Time.deltaTime));
         }
     }
 }
