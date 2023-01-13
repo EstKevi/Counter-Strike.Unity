@@ -1,5 +1,3 @@
-using System;
-using System.Numerics;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
@@ -8,7 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 [RequireComponent(typeof(NetworkTransform))]
 [RequireComponent(typeof(CharacterController))]
 
-public class player : NetworkBehaviour
+public class Player : NetworkBehaviour
 {
     [SerializeField] private float speed = 10;
     

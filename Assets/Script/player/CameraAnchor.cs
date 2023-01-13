@@ -6,9 +6,6 @@ public class CameraAnchor : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if (IsOwner)
-        {
-            FindObjectOfType<CinemachineVirtualCamera>().EnsureNotNull().Follow = transform;
-        }
+        FindObjectOfType<CinemachineVirtualCamera>().EnsureNotNull().Follow = transform;
     }
 }
