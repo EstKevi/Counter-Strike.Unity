@@ -1,4 +1,3 @@
-
 public class PlugInput : IInput
 {
     public bool Jump()

@@ -1,24 +1,20 @@
+using System;
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private NetworkManager networkManager;
-    [SerializeField] private GameObject player;
+    [SerializeField] private UnityTransport unityTransport;
+
     private void Awake()
     {
+        unityTransport = FindObjectOfType<UnityTransport>().EnsureNotNull();
         networkManager = FindObjectOfType<NetworkManager>().EnsureNotNull();
-
-        player.EnsureNotNull();
     }
 
-    public void Host()
-    {
-        networkManager.StartHost();
-    }
-
-    public void Client()
-    {
-        networkManager.StartClient();
-    }
+    public void StartGameHost() => networkManager.StartHost();
+    public void StartGameClient() => networkManager.StartClient();
+    public void ChangeIpAddress(string address) => unityTransport.ConnectionData.Address = address;
 }

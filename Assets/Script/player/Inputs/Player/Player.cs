@@ -9,6 +9,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Player : NetworkBehaviour
 {
     [SerializeField] private float speed = 10;
+    [SerializeField] private float gravity;
     
     private IInput input = new PlugInput();
     private CharacterController characterController;
@@ -20,6 +21,7 @@ public class Player : NetworkBehaviour
 
     private void Awake()
     {
+        input.EnsureNotNull();
         characterController = GetComponent<CharacterController>().EnsureNotNull();
     }
 
@@ -28,7 +30,7 @@ public class Player : NetworkBehaviour
         base.OnNetworkSpawn();
         if (IsOwner)
         {
-            input = new KeyBoardInput();
+            input = new KeyBoardInput().EnsureNotNull();
         }
     }
 
@@ -36,14 +38,22 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
-            var directionVector = new Vector3(input.DirectionX(), 0, input.DirectionZ());
-
-            move.Value = directionVector;
+            var x = input.DirectionX();
+            var z = input.DirectionZ();
+            
+            move.Value = transform.rotation * new Vector3(x,0,z);
         }
-        
+
         if (IsServer)
         {
             characterController.Move(move.Value * (speed * Time.deltaTime));
+            characterController.Move(Vector3.down * (Time.deltaTime * gravity));
+            
         }
+    }
+
+    private void Jump()
+    {
+        //TODO сделать прыжок
     }
 }
