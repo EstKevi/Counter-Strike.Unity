@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5926298562518126238}
   - component: {fileID: 3812052251518442653}
+  - component: {fileID: 2347071024202976420}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -71,6 +72,20 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1529917364280210802}
+--- !u!114 &2347071024202976420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372122932018533846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43af7487fc5142ffb65cbf9d1ba73138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineVirtualCamera: {fileID: 3812052251518442653}
+  speedMouse: 1000
 --- !u!1 &4747555219743382621
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +229,6 @@ GameObject:
   - component: {fileID: 8225736895117926422}
   - component: {fileID: 8225736895117926423}
   - component: {fileID: 159171917604673863}
-  - component: {fileID: 1313178155417793620}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -375,19 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63a6ecff6942be42968fe25f4e8974d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cineCamera: {fileID: 3812052251518442653}
   speed: 10
   gravity: 10
---- !u!114 &1313178155417793620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225736895117926421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43af7487fc5142ffb65cbf9d1ba73138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinemachineVirtualCamera: {fileID: 3812052251518442653}
-  speedMouse: 1000

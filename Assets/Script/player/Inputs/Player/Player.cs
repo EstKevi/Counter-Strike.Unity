@@ -1,3 +1,5 @@
+#nullable enable
+using Cinemachine;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
@@ -8,11 +10,12 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Player : NetworkBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera cineCamera = null!;
     [SerializeField] private float speed = 10;
     [SerializeField] private float gravity;
     
     private IInput input = new PlugInput();
-    private CharacterController characterController;
+    private CharacterController characterController = null!;
 
     private NetworkVariable<Vector3> move = new(
         Vector3.zero,
@@ -41,7 +44,9 @@ public class Player : NetworkBehaviour
             var x = input.DirectionX();
             var z = input.DirectionZ();
             
-            move.Value = transform.rotation * new Vector3(x,0,z);
+            move.Value = new Vector3(x,0,z);
+            move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
+            //эта штука не вращает самого игрока
         }
 
         if (IsServer)

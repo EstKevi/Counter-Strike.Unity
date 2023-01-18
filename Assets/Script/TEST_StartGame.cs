@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour
+public class TEST_StartGame : MonoBehaviour
 {
     [SerializeField] private Button buttonHost;
     [SerializeField] private Button buttonClient;
