@@ -27,12 +27,8 @@ namespace Script.player
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
-            
-            if (IsOwner)
-                mouseInput = new KeyMouseInput().EnsureNotNull();
-            else
-                cinemachineVirtualCamera.enabled = false;
-
+            if (IsOwner) mouseInput = new KeyMouseInput().EnsureNotNull();
+            if(!IsOwner) cinemachineVirtualCamera.enabled = false;
         }
 
         private void Update()
