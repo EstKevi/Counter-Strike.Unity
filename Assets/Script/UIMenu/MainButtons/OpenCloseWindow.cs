@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OpenWindow : MonoBehaviour
+public class OpenCloseWindow : MonoBehaviour
 {
     [SerializeField] private Button button;
     [SerializeField] private GameObject window;

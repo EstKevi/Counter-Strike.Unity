@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="" />
+    <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowConnect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowHost.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowSettings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/CameraAnchor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/CameraAnchor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,12 +27,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/ExitButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowConnect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowHost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/WindowsUI/WindowSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Inputs/Player/CameraAnchor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Spawning/NetworkSpawnManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -101,7 +114,8 @@
       <workItem from="1673763477171" duration="7032000" />
       <workItem from="1673921250535" duration="5475000" />
       <workItem from="1673961671404" duration="6566000" />
-      <workItem from="1674052105557" duration="5569000" />
+      <workItem from="1674052105557" duration="6135000" />
+      <workItem from="1674137774157" duration="377000" />
     </task>
     <servers />
   </component>
