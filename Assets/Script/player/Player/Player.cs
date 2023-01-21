@@ -46,7 +46,6 @@ public class Player : NetworkBehaviour
             
             move.Value = new Vector3(x,0,z);
             move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
-            //эта штука не вращает колайдер самого игрока
         }
 
         if (IsServer)
