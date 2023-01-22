@@ -1427,7 +1427,7 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -6915,7 +6915,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1924085446}
-    PlayerPrefab: {fileID: 8225736895117926421, guid: 0464dace8410eba40a128b0ccacf8c53,
+    PlayerPrefab: {fileID: 8225736895117926421, guid: d59e2917e41cf0d4a91d7cfc5f24cf46,
       type: 3}
     NetworkPrefabs: []
     TickRate: 64
