@@ -4,16 +4,17 @@ using UnityEngine;
 public class DropedGun : NetworkBehaviour
 {
     [SerializeField] private GameObject prefabWeapon;
+
+    private void Awake() => prefabWeapon.EnsureNotNull();
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<Player>(out var player))
+        if (other.gameObject.TryGetComponent<GrabWeapon>(out var hand))
         {
-            if (prefabWeapon != null)
+            if (hand.Grab(prefabWeapon))
             {
-                player.Grab(prefabWeapon);
                 Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }
