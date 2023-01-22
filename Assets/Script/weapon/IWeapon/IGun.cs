@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Script.weapon
 {
     public interface IGun

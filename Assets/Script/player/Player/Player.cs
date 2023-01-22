@@ -11,7 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Player : NetworkBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cineCamera = null!;
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float speed;
     [SerializeField] private float gravity;
     
     private IInput input = new PlugInput();
@@ -43,7 +43,7 @@ public class Player : NetworkBehaviour
         {
             var x = input.DirectionX();
             var z = input.DirectionZ();
-            
+
             move.Value = new Vector3(x,0,z);
             move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
         }

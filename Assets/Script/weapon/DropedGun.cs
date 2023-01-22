@@ -1,7 +1,6 @@
-using Unity.Netcode;
 using UnityEngine;
 
-public class DropedGun : NetworkBehaviour
+public class DropedGun : MonoBehaviour
 {
     [SerializeField] private GameObject prefabWeapon;
 
@@ -9,7 +8,7 @@ public class DropedGun : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<GrabWeapon>(out var hand))
+        if (other.gameObject.TryGetComponent<HandWeapon>(out var hand))
         {
             if (hand.Grab(prefabWeapon))
             {
