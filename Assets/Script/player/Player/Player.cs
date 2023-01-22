@@ -11,6 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Player : NetworkBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cineCamera = null!;
+    [SerializeField] private Transform hand = null!;
     [SerializeField] private float speed = 10;
     [SerializeField] private float gravity;
     
@@ -53,6 +54,11 @@ public class Player : NetworkBehaviour
             characterController.Move(move.Value * (speed * Time.deltaTime));
             characterController.Move(Vector3.down * (Time.deltaTime * gravity));
         }
+    }
+
+    public void Grab(GameObject weapon)
+    { 
+        Instantiate(weapon,hand.transform);
     }
 
     private void Jump()
