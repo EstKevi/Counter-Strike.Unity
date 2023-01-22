@@ -8,7 +8,8 @@ namespace Script.weapon.AK_47
     {
         [SerializeField] private int ammo = 30;
         [SerializeField] private int stock = 90;
-        [SerializeField] private float shootSpeed;
+        [SerializeField] private float shootSpeed = 0.01f;
+        [SerializeField] private float reloadSpeed = 3.5f;
         
         public void Shoot()
         {

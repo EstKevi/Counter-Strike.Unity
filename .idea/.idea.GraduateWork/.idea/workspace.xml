@@ -6,10 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/ExitButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/ExitButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainCanvas.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/MainCanvas.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/ExitButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainButtons/OpenCloseWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/MainCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowConnect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowHost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/WindowsUI/WindowSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/player/Player/GrabWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Components/NetworkTransform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -114,7 +122,7 @@
       <workItem from="1674138915576" duration="169000" />
       <workItem from="1674284433779" duration="18919000" />
       <workItem from="1674335455308" duration="1764000" />
-      <workItem from="1674370192221" duration="5715000" />
+      <workItem from="1674370192221" duration="9516000" />
     </task>
     <servers />
   </component>
