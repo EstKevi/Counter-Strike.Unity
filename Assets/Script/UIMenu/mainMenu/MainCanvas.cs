@@ -13,7 +13,7 @@ public class MainCanvas : MonoBehaviour
 
     private void Awake()
     {
-        entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
+        entryPoint.EnsureNotNull();
         windowHost.EnsureNotNull();
         windowConnect.EnsureNotNull();
     }

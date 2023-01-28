@@ -1,36 +1,46 @@
+using Script.player;
 using Script.player.Inputs;
+using Script.player.Inputs.Keyboard;
+using Script.player.Inputs.Mouse;
 using Script.weapon;
 using Unity.Netcode;
 using UnityEngine;
 
 public class HandWeapon : NetworkBehaviour
 {
+    [SerializeField] private PlayerCamera playerCamera;
     [SerializeField] private GameObject hand;
     [SerializeField] private bool canGrab = true;
-    private IGun weapon;
-    private IInputMouse Mouse = new PlugMouseInput();
-    private IInput KeyBoard = new PlugInput();
 
-    private void Awake() => hand.EnsureNotNull();
+    private IInputMouse inputMouse = new PlugMouseInput();
+    private IInput keyBoardInput = new PlugInput();
+    private IGun weapon;
+
+    private void Awake()
+    {
+        hand.EnsureNotNull();
+        playerCamera.EnsureNotNull();
+    }
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if(!IsOwner)return;
-        
-        KeyBoard = new KeyBoardInput();
-        Mouse = new KeyMouseInput();
+        if (IsOwner)
+        {
+            inputMouse = new KeyMouseInput();
+            keyBoardInput = new KeyBoardInput();
+        }
     }
-
+    
     public bool Grab(GameObject weapon)
     {
         if (canGrab)
         {
-             hand = Instantiate(weapon,hand.transform);
-             hand.TryGetComponent<IGun>(out var gun);
-             this.weapon = gun;
-             canGrab = false;
-             return !canGrab;
+            hand = Instantiate(weapon,hand.transform);
+            hand.TryGetComponent<IGun>(out var gun);
+            this.weapon = gun;
+            canGrab = false;
+            return !canGrab;
         }
 
         return canGrab;
@@ -38,12 +48,12 @@ public class HandWeapon : NetworkBehaviour
 
     private void Update()
     {
-        if (Mouse.LeftMouseButton() && weapon != null)
+        if (inputMouse.MouseLeft() && weapon != null)
         {
-            weapon.Shoot();
+            weapon.Shoot(playerCamera.HitCollider);
         }
 
-        if (KeyBoard.R_Button() && weapon != null)
+        if (keyBoardInput.R_Button() && weapon != null)
         {
             weapon.Reload();
         }

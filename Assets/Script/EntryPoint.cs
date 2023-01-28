@@ -13,8 +13,8 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         playerInterface.EnsureNotNull();
-        unityTransport = FindObjectOfType<UnityTransport>().EnsureNotNull();
-        networkManager = FindObjectOfType<NetworkManager>().EnsureNotNull();
+        unityTransport.EnsureNotNull();
+        networkManager.EnsureNotNull();
     }
 
     private void Start()

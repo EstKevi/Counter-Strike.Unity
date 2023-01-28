@@ -1,4 +1,4 @@
-namespace Script.player.Inputs
+namespace Script.player.Inputs.Mouse
 {
     public class PlugMouseInput : IInputMouse
     {
@@ -11,8 +11,13 @@ namespace Script.player.Inputs
         {
             return 0;
         }
+        
+        public bool MouseRight()
+        {
+            return false;
+        }
 
-        public bool LeftMouseButton()
+        public bool MouseLeft()
         {
             return false;
         }

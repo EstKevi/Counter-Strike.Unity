@@ -1,10 +1,13 @@
-public interface IInput
+namespace Script.player.Inputs.Keyboard
 {
-    public float MoveHorizontalX();
+    public interface IInput
+    {
+        public float MoveHorizontalX();
     
-    public float MoveVerticalZ();
+        public float MoveVerticalZ();
     
-    public bool SpaseButton();
+        public bool SpaseButton();
 
-    public bool R_Button();
+        public bool R_Button();
+    }
 }

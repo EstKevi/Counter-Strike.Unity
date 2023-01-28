@@ -9,7 +9,7 @@ public class TEST_StartGame : MonoBehaviour
 
     private void Awake()
     {
-        entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
+        entryPoint.EnsureNotNull();
         
         buttonHost.onClick.AddListener(ChooseHost);
         buttonClient.onClick.AddListener(ChooseClient);

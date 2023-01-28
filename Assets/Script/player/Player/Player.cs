@@ -1,5 +1,6 @@
 #nullable enable
 using Cinemachine;
+using Script.player.Inputs.Keyboard;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;

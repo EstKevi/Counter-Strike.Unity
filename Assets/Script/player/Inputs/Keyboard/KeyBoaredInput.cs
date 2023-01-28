@@ -1,25 +1,27 @@
+using UnityEngine;
+
 namespace Script.player.Inputs.Keyboard
 {
-    public class PlugInput : IInput
+    public class KeyBoardInput : IInput
     {
         public float MoveHorizontalX()
         {
-            return 0;
+            return Input.GetAxis("Horizontal");
         }
 
         public float MoveVerticalZ()
         {
-            return 0;
+            return Input.GetAxis("Vertical");
         }
 
         public bool SpaseButton()
         {
-            return false;
+            return Input.GetKeyDown(KeyCode.Space);
         }
 
         public bool R_Button()
         {
-            return false;
+            return Input.GetKeyDown(KeyCode.R);
         }
     }
 }

@@ -1,40 +1,40 @@
-using System;
 using System.Collections;
+using System.Globalization;
+using Script.player.Player.heal;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Script.weapon.AK_47
 {
-    public class AkWeapon : MonoBehaviour, IGun
+    public class Weapon : NetworkBehaviour, IGun
     {
         [SerializeField] private int ammo = 30;
         [SerializeField] private int stock = 90;
+        [SerializeField] private float damage = 23;
         [SerializeField] private float shootSpeed = 0.1f;
         [SerializeField] private float reloadSpeed = 3.5f;
         [SerializeField] private bool canShoot;
         [SerializeField] private bool canReload;
         private float previousShot;
 
-        private void Start()
+        public void Shoot(Collider obj)
         {
-            canShoot = true;
-            canReload = true;
-        }
-
-        public void Shoot()
-        {
-            if (canShoot is false) return;
-            if (ammo != 0)
+            if (canShoot is false || ammo == 0)
             {
-                if (Time.time - previousShot > shootSpeed)
-                {
-                    print("bang");
-                    ammo--;
-                    previousShot = Time.time;
-                }
+                Reload();
                 return;
             }
+            if (!(Time.time - previousShot > shootSpeed)) return;
+            
+            print("bang");
+            ammo--;
+            { previousShot = Time.time; }
 
-            Reload();
+            if (obj.TryGetComponent<IDamageable>(out var heal))
+            {
+                heal.Apply(damage);
+                print("damage");
+            }
         }
 
         public void Reload()
@@ -46,33 +46,27 @@ namespace Script.weapon.AK_47
         private IEnumerator ReloadWeapon()
         {
             print("reload is started");
-
-            canShoot = false;
-            canReload = false;
-
+            ChangeWeaponState();
+            
             yield return new WaitForSecondsRealtime(reloadSpeed);
 
-            canShoot = true;
-            canReload = true;
-
-            if (ammo == 0 && stock >= 30)
-            {
-                stock -= 30;
-                ammo += 30;
-
-                print("reload is ended");
-                yield break;
-            }
-
             var cartridges = 30 - ammo;
-
+            
             while (stock - cartridges < 0) 
                 cartridges--;
 
             stock -= cartridges;
             ammo += cartridges;
+            
+            ChangeWeaponState();
 
             print("reload is ended");
+        }
+
+        private void ChangeWeaponState()
+        {
+            canReload = !canReload;
+            canShoot = !canShoot;
         }
     }
 }

@@ -1866,6 +1866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 434556068}
   heals: {fileID: 1663270259}
+  ammo: {fileID: 0}
 --- !u!114 &314566764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1961,11 +1962,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AK-47 Droped
-      objectReference: {fileID: 0}
-    - target: {fileID: 989823228082739675, guid: 36ba924bb0f117943ba31d4176d5a77b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -2591,8 +2587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4189414b099eb154b8c7761158edb838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkManager: {fileID: 0}
-  unityTransport: {fileID: 0}
+  networkManager: {fileID: 1924085447}
+  unityTransport: {fileID: 1924085446}
   playerInterface: {fileID: 314566762}
   startGameUnityEvent:
     m_PersistentCalls:
@@ -4466,7 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1f5fc03a2da1346b366506537df353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryPoint: {fileID: 0}
+  entryPoint: {fileID: 434556068}
   windowHost: {fileID: 917795591}
   windowConnect: {fileID: 1695211886}
   StartGameHost:
@@ -5376,7 +5372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonHost: {fileID: 1681258406}
   buttonClient: {fileID: 1732208065}
-  entryPoint: {fileID: 0}
+  entryPoint: {fileID: 434556068}
 --- !u!1 &1355804088
 GameObject:
   m_ObjectHideFlags: 0

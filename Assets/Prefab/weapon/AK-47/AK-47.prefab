@@ -91,10 +91,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: 30
   stock: 90
+  damage: 23
   shootSpeed: 0.1
   reloadSpeed: 3.5
-  canShoot: 0
-  canReload: 0
+  canShoot: 1
+  canReload: 1
 --- !u!1001 &372117629203597341
 PrefabInstance:
   m_ObjectHideFlags: 0

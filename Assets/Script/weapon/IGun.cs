@@ -1,10 +1,10 @@
-using System.Collections;
+using UnityEngine;
 
 namespace Script.weapon
 {
     public interface IGun
     {
-        void Shoot();
+        void Shoot(Collider obj);
         void Reload();
     }
 }

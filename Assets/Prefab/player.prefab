@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec577e501ad8da4a98908664c95b9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 2347071024202976420}
   hand: {fileID: 6805225756052748577}
   canGrab: 1
 --- !u!114 &4633413037540180092

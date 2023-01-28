@@ -1,6 +1,7 @@
 using System;
 using Cinemachine;
 using Script.player.Inputs;
+using Script.player.Inputs.Mouse;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -23,17 +24,23 @@ namespace Script.player
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner);
 
+        public Collider HitCollider { get; private set; }
+
         private void Start() => Cursor.lockState = CursorLockMode.Locked;
 
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
             if (IsOwner) mouseInput = new KeyMouseInput();
-            if(!IsOwner) cinemachineVirtualCamera.enabled = false;
+            if (!IsOwner) cinemachineVirtualCamera.enabled = false;
         }
 
         private void Update()
         {
+            Physics.Raycast(transform.position, transform.forward, out var hit);
+            Debug.DrawRay(transform.position,transform.forward,Color.green);
+            HitCollider = hit.collider;
+            
             if (IsOwner)
             {
                 var x = mouseInput.DirectionMouseX() * speedMouse * Time.deltaTime;
