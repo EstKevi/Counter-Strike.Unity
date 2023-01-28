@@ -6,37 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/mainMenu/MainCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/mainMenu/MainCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoardInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoardInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/KeyMouseInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/KeyMouseInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/PlugMouseInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/PlugMouseInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/PlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/AK-47.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/IWeapon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/IWeapon/IGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/IGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/IWeapon/IGun.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/IGun.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +15,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs" root0="FORCE_HIGHLIGHTING" />
@@ -143,7 +116,7 @@
       <workItem from="1674370192221" duration="13437000" />
       <workItem from="1674399141442" duration="17856000" />
       <workItem from="1674893003020" duration="8041000" />
-      <workItem from="1674908627849" duration="3207000" />
+      <workItem from="1674908627849" duration="5011000" />
     </task>
     <servers />
   </component>
@@ -166,37 +139,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs</url>
-          <line>53</line>
-          <properties documentPath="E:\GitHub\GraduateWork\Assets\Script\player\Player\HandWeapon.cs" initialLine="53" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="1321" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1322" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs</url>
-          <line>20</line>
-          <properties documentPath="E:\GitHub\GraduateWork\Assets\Script\weapon\Weapon.cs" initialLine="20" containingFunctionPresentation="method 'Shoot'">
-            <startOffsets>
-              <option value="663" />
-            </startOffsets>
-            <endOffsets>
-              <option value="664" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

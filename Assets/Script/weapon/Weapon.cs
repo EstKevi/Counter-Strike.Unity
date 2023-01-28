@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Globalization;
 using Script.player.Player.heal;
 using Unity.Netcode;
 using UnityEngine;
@@ -16,6 +15,9 @@ namespace Script.weapon.AK_47
         [SerializeField] private bool canShoot;
         [SerializeField] private bool canReload;
         private float previousShot;
+
+        public int Ammo => ammo;
+        public int Stock => stock;
 
         public void Shoot(Collider obj)
         {
@@ -51,9 +53,11 @@ namespace Script.weapon.AK_47
             yield return new WaitForSecondsRealtime(reloadSpeed);
 
             var cartridges = 30 - ammo;
-            
-            while (stock - cartridges < 0) 
+
+            while (stock - cartridges < 0)
+            {
                 cartridges--;
+            }
 
             stock -= cartridges;
             ammo += cartridges;
