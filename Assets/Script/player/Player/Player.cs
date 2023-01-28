@@ -41,8 +41,8 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
         {
-            var x = input.DirectionX();
-            var z = input.DirectionZ();
+            var x = input.MoveHorizontalX();
+            var z = input.MoveVerticalZ();
 
             move.Value = new Vector3(x,0,z);
             move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;

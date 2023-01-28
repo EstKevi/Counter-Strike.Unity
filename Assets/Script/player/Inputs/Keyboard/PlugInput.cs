@@ -1,17 +1,22 @@
 public class PlugInput : IInput
 {
-    public bool Jump()
+    public float MoveHorizontalX()
+    {
+        return 0;
+    }
+
+    public float MoveVerticalZ()
+    {
+        return 0;
+    }
+
+    public bool SpaseButton()
     {
         return false;
     }
 
-    public float DirectionX()
+    public bool R_Button()
     {
-        return 0;
-    }
-
-    public float DirectionZ()
-    {
-        return 0;
+        return false;
     }
 }

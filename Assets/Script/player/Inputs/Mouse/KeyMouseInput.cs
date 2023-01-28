@@ -14,7 +14,7 @@ namespace Script.player.Inputs
             return Input.GetAxis("Mouse Y");
         }
 
-        public bool MouseZero()
+        public bool LeftMouseButton()
         {
             return Input.GetMouseButton(0);
         }

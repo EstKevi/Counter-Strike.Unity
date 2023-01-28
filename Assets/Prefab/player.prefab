@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5926298562518126238}
   - component: {fileID: 3812052251518442653}
   - component: {fileID: 2347071024202976420}
+  - component: {fileID: 1101572707921594729}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -87,6 +88,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinemachineVirtualCamera: {fileID: 3812052251518442653}
   speedMouse: 1000
+--- !u!114 &1101572707921594729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372122932018533846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!1 &4747555219743382621
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3958023398037305246}
+  - component: {fileID: 8848823848227208531}
   m_Layer: 0
   m_Name: hand
   m_TagString: Untagged
@@ -162,6 +190,32 @@ Transform:
   m_Father: {fileID: 5926298562518126238}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8848823848227208531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805225756052748577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!1 &8225736895117926421
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +381,6 @@ MonoBehaviour:
   cineCamera: {fileID: 3812052251518442653}
   speed: 10
   gravity: 10
-  hand: {fileID: 6805225756052748577}
 --- !u!114 &4633413037540180092
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,20 +7,18 @@
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/GrabWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/GrabWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoardInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoardInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/KeyMouseInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/KeyMouseInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/PlugMouseInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/PlugMouseInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/AK-47/AkWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/DropedGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/IWeapon/IGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/IWeapon/IGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player/PlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +27,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/TEST_StartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/player/Player/HandWeapon.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,10 +88,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22312">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22312" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,6 +123,7 @@
       <workItem from="1674335455308" duration="1764000" />
       <workItem from="1674370192221" duration="13437000" />
       <workItem from="1674399141442" duration="17856000" />
+      <workItem from="1674893003020" duration="6494000" />
     </task>
     <servers />
   </component>

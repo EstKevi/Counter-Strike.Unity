@@ -1,13 +1,26 @@
+using Script.player.Inputs;
 using Script.weapon;
+using Unity.Netcode;
 using UnityEngine;
 
-public class HandWeapon : MonoBehaviour
+public class HandWeapon : NetworkBehaviour
 {
     [SerializeField] private GameObject hand;
     [SerializeField] private bool canGrab = true;
     private IGun weapon;
+    private IInputMouse Mouse = new PlugMouseInput();
+    private IInput KeyBoard = new PlugInput();
 
     private void Awake() => hand.EnsureNotNull();
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        if(!IsOwner)return;
+        
+        KeyBoard = new KeyBoardInput();
+        Mouse = new KeyMouseInput();
+    }
 
     public bool Grab(GameObject weapon)
     {
@@ -25,12 +38,12 @@ public class HandWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && weapon != null)
+        if (Mouse.LeftMouseButton() && weapon != null)
         {
             weapon.Shoot();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && weapon != null)
+        if (KeyBoard.R_Button() && weapon != null)
         {
             weapon.Reload();
         }

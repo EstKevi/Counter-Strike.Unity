@@ -2,18 +2,23 @@ using UnityEngine;
 
 public class KeyBoardInput : IInput
 {
-    public bool Jump()
-    {
-        return Input.GetKeyDown(KeyCode.Space);
-    }
-
-    public float DirectionX()
+    public float MoveHorizontalX()
     {
         return Input.GetAxis("Horizontal");
     }
 
-    public float DirectionZ()
+    public float MoveVerticalZ()
     {
         return Input.GetAxis("Vertical");
+    }
+
+    public bool SpaseButton()
+    {
+        return Input.GetKeyDown(KeyCode.Space);
+    }
+
+    public bool R_Button()
+    {
+        return Input.GetKeyDown(KeyCode.R);
     }
 }

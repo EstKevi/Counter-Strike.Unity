@@ -12,7 +12,7 @@ namespace Script.player.Inputs
             return 0;
         }
 
-        public bool MouseZero()
+        public bool LeftMouseButton()
         {
             return false;
         }

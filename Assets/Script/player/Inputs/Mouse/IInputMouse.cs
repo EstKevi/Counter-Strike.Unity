@@ -6,6 +6,6 @@ namespace Script.player.Inputs
         
         public float DirectionMouseY();
 
-        public bool MouseZero();
+        public bool LeftMouseButton();
     }
 }

@@ -1,8 +1,10 @@
 public interface IInput
 {
-    public bool Jump();
+    public float MoveHorizontalX();
     
-    public float DirectionX();
+    public float MoveVerticalZ();
     
-    public float DirectionZ();
+    public bool SpaseButton();
+
+    public bool R_Button();
 }
