@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerInterface : MonoBehaviour
 {
     [SerializeField] private EntryPoint entryPoint;
-    private void Awake()
-    {
-        entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
-    }
+    [SerializeField] private TMP_Text heals;
+    [SerializeField] private TMP_Text ammo;
+    private void Awake() => entryPoint.EnsureNotNull();
+
 }

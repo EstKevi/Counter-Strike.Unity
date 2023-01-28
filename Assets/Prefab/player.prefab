@@ -231,8 +231,8 @@ GameObject:
   - component: {fileID: 8225736895117926422}
   - component: {fileID: 8225736895117926423}
   - component: {fileID: 159171917604673863}
-  - component: {fileID: 4633413037540180092}
   - component: {fileID: 9180107482092227737}
+  - component: {fileID: 4633413037540180092}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -381,19 +381,6 @@ MonoBehaviour:
   cineCamera: {fileID: 3812052251518442653}
   speed: 10
   gravity: 10
---- !u!114 &4633413037540180092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225736895117926421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5396ad4d5cd49e64f90d7cb51d25d9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heal: 100
 --- !u!114 &9180107482092227737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,3 +395,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 6805225756052748577}
   canGrab: 1
+--- !u!114 &4633413037540180092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5396ad4d5cd49e64f90d7cb51d25d9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: 100
