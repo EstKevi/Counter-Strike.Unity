@@ -7,18 +7,23 @@ namespace Script.weapon.AK_47
 {
     public class Weapon : NetworkBehaviour, IGun
     {
-        [SerializeField] private int ammo = 30;
-        [SerializeField] private int stock = 90;
-        [SerializeField] private float damage = 23;
-        [SerializeField] private float shootSpeed = 0.1f;
-        [SerializeField] private float reloadSpeed = 3.5f;
+        [SerializeField] private int ammo;
+        [SerializeField] private int stock;
+        [SerializeField] private int damage;
+        [SerializeField] private float shootSpeed;
+        [SerializeField] private float reloadSpeed;
         [SerializeField] private bool canShoot;
         [SerializeField] private bool canReload;
         private float previousShot;
+        private int originalMeaningAmmo;
 
         public int Ammo => ammo;
+
         public int Stock => stock;
 
+        private void Awake() => originalMeaningAmmo = ammo;
+        
+        // ReSharper disable Unity.PerformanceAnalysis
         public void Shoot(Collider obj)
         {
             if (canShoot is false || ammo == 0)
@@ -26,22 +31,23 @@ namespace Script.weapon.AK_47
                 Reload();
                 return;
             }
+
             if (!(Time.time - previousShot > shootSpeed)) return;
-            
+
             print("bang");
             ammo--;
-            { previousShot = Time.time; }
 
-            if (obj.TryGetComponent<IDamageable>(out var heal))
-            {
-                heal.Apply(damage);
-                print("damage");
-            }
+            previousShot = Time.time;
+
+            if (!obj.TryGetComponent<IDamageable>(out var heal)) return;
+            
+            heal.Apply(damage);
+            print("damage");
         }
 
         public void Reload()
         {
-            if (canReload && ammo < 30 && stock != 0)
+            if (canReload && ammo < originalMeaningAmmo && stock != 0)
                 StartCoroutine(ReloadWeapon());
         }
 
@@ -52,7 +58,7 @@ namespace Script.weapon.AK_47
             
             yield return new WaitForSecondsRealtime(reloadSpeed);
 
-            var cartridges = 30 - ammo;
+            var cartridges = originalMeaningAmmo - ammo;
 
             while (stock - cartridges < 0)
             {

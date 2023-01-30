@@ -1572,7 +1572,7 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.685
+      value: 1.228
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -1582,22 +1582,22 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99941045
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.034334797
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -1612,7 +1612,7 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 3.935
       objectReference: {fileID: 0}
     - target: {fileID: 4995638803507711148, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -1864,9 +1864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb899ee61021037468c24033ff3b3cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryPoint: {fileID: 434556068}
-  heals: {fileID: 1663270259}
-  ammo: {fileID: 0}
+  healsText: {fileID: 1663270259}
+  ammoText: {fileID: 30165273}
 --- !u!114 &314566764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,22 +1985,22 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9994414
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.033421338
       objectReference: {fileID: 0}
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -2016,7 +2015,7 @@ PrefabInstance:
     - target: {fileID: 1840385988333468098, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -3.831
       objectReference: {fileID: 0}
     - target: {fileID: 4995638803507711148, guid: 36ba924bb0f117943ba31d4176d5a77b,
         type: 3}
@@ -2104,7 +2103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3156316, y: 1.48, z: 1.3587103}
+  m_LocalPosition: {x: 0, y: 1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2589,7 +2588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkManager: {fileID: 1924085447}
   unityTransport: {fileID: 1924085446}
-  playerInterface: {fileID: 314566762}
+  playerInterface: {fileID: 314566763}
   startGameUnityEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5274,7 +5273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1282221043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7388,7 +7387,19 @@ MonoBehaviour:
     NetworkTransport: {fileID: 1924085446}
     PlayerPrefab: {fileID: 8225736895117926421, guid: d59e2917e41cf0d4a91d7cfc5f24cf46,
       type: 3}
-    NetworkPrefabs: []
+    NetworkPrefabs:
+    - Override: 0
+      Prefab: {fileID: 989823228082739675, guid: 36ba924bb0f117943ba31d4176d5a77b,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 989823228082739675, guid: 1434c7394a70de8408237e3a5d55c64b,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
     TickRate: 64
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0

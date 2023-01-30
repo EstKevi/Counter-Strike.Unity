@@ -6,8 +6,8 @@ namespace Script.player.Inputs.Keyboard
     
         public float MoveVerticalZ();
     
-        public bool SpaseButton();
+        public bool KeySpase();
 
-        public bool R_Button();
+        public bool KeyR();
     }
 }

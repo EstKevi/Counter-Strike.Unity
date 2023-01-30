@@ -12,12 +12,12 @@ namespace Script.player.Inputs.Mouse
             return 0;
         }
         
-        public bool MouseRight()
+        public bool MouseRightButton()
         {
             return false;
         }
 
-        public bool MouseLeft()
+        public bool MouseLeftButton()
         {
             return false;
         }

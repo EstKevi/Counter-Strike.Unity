@@ -1,16 +1,21 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class PlayerInterface : MonoBehaviour
 {
-    [SerializeField] private EntryPoint entryPoint;
-    [SerializeField] private TMP_Text heals;
-    [SerializeField] private TMP_Text ammo;
+    [SerializeField] private TMP_Text healsText;
+    [SerializeField] private TMP_Text ammoText;
 
     private void Awake()
     {
-        entryPoint.EnsureNotNull();
-        heals.EnsureNotNull();
-        ammo.EnsureNotNull();
+        healsText.EnsureNotNull();
+        ammoText.EnsureNotNull();
+    }
+
+    public void PlayerStatsSet(int ammo, int stock, int heal)
+    {
+        healsText.text = $"HP {heal}";
+        ammoText.text = $"{ammo} | {stock}";
     }
 }

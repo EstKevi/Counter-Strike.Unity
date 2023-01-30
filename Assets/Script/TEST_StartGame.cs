@@ -1,3 +1,4 @@
+using Script;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,13 +18,13 @@ public class TEST_StartGame : MonoBehaviour
 
     private void ChooseHost()
     {
-        entryPoint.StartGameHost();
+        entryPoint.StartGame(MainCanvas.ModeGame.Host);
         gameObject.SetActive(false);
     }
 
     private void ChooseClient()
     {
-        entryPoint.StartGameClient();
+        entryPoint.StartGame(MainCanvas.ModeGame.Client);
         gameObject.SetActive(false);
     }
 }

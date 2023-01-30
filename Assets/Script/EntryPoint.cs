@@ -1,37 +1,53 @@
+using System;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EntryPoint : MonoBehaviour
+namespace Script
 {
-    [SerializeField] private NetworkManager networkManager;
-    [SerializeField] private UnityTransport unityTransport;
-    [SerializeField] private GameObject playerInterface;
-    [Space] public UnityEvent startGameUnityEvent = new();
-
-    private void Awake()
+    public class EntryPoint : MonoBehaviour
     {
-        playerInterface.EnsureNotNull();
-        unityTransport.EnsureNotNull();
-        networkManager.EnsureNotNull();
-    }
+        [SerializeField] private NetworkManager networkManager;
+        [SerializeField] private UnityTransport unityTransport;
+        [SerializeField] private PlayerInterface playerInterface;
+        [Space] public UnityEvent startGameUnityEvent = new();
 
-    private void Start()
-    {
-        startGameUnityEvent.AddListener((() => playerInterface.SetActive(true)));
-    }
+        private void Awake()
+        {
+            playerInterface.EnsureNotNull();
+            unityTransport.EnsureNotNull();
+            networkManager.EnsureNotNull();
+        }
 
-    public void StartGameHost()
-    {
-        networkManager.StartHost();
-        startGameUnityEvent.Invoke();
-    }
+        private void Start()
+        {
+            startGameUnityEvent.AddListener((() => playerInterface.enabled = false));
+        }
+        public void StartGame(MainCanvas.ModeGame gameMode)
+        {
+            switch (gameMode)
+            {
+                case MainCanvas.ModeGame.Host:
+                    networkManager.StartHost();
+                    startGameUnityEvent.Invoke();
+                break;
+                
+                case MainCanvas.ModeGame.Client:
+                    networkManager.StartClient();
+                    startGameUnityEvent.Invoke();
+                    break;
+                
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(gameMode), gameMode, null);
+            }
+        }
 
-    public void StartGameClient()
-    {
-        networkManager.StartClient();
-        startGameUnityEvent.Invoke();
+        public void ChangeIpAddress(string address) => unityTransport.ConnectionData.Address = address;
+
+        public void ChangeStats(int ammo, int stock, int heal)
+        {
+            playerInterface.PlayerStatsSet(ammo, stock, heal);
+        }
     }
-    public void ChangeIpAddress(string address) => unityTransport.ConnectionData.Address = address;
 }

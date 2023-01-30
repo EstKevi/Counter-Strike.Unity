@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class Heals : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float heal;
-    
-    public void Apply(float damage)
+    [SerializeField] private int heal;
+    public int Heal => heal;
+    public void Apply(int damage)
     {
-        heal =- damage;
+        Debug.Log($"Damage: {damage}");
+        heal -= damage;
+        if (heal < 0)
+            heal = 0;
     }
 }

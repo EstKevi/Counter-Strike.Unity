@@ -1,4 +1,5 @@
 using System;
+using Script;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,9 +21,17 @@ public class MainCanvas : MonoBehaviour
 
     private void Start()
     {
-        StartGameHost.AddListener((() => StartGame(windowHost.IpAddressHost(),ModeGame.Host)));
+        StartGameHost.AddListener(() => 
+            StartGame(
+                windowHost.IpAddressHost(),
+                ModeGame.Host)
+            );
         
-        StartGameClient.AddListener((() => StartGame(windowConnect.IpAddressConnect(),ModeGame.Client)));
+        StartGameClient.AddListener(() =>
+            StartGame(
+                windowConnect.IpAddressConnect(), 
+                ModeGame.Client)
+            );
     }
 
     private void StartGame(string address, ModeGame mode)
@@ -31,18 +40,20 @@ public class MainCanvas : MonoBehaviour
         switch (mode)
         {
             case ModeGame.Host:
-                entryPoint.StartGameHost();
+                entryPoint.StartGame(ModeGame.Host);
                 break;
+            
             case ModeGame.Client:
-                entryPoint.StartGameClient();
+                entryPoint.StartGame(ModeGame.Client);
                 break;
+            
             default:
                 throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
         gameObject.SetActive(false);
     }
     
-    private enum ModeGame
+    public enum ModeGame
     {
         Host,
         Client

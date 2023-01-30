@@ -12,12 +12,12 @@ namespace Script.player.Inputs.Keyboard
             return 0;
         }
 
-        public bool SpaseButton()
+        public bool KeySpase()
         {
             return false;
         }
 
-        public bool R_Button()
+        public bool KeyR()
         {
             return false;
         }

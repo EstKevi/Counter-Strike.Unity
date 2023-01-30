@@ -14,12 +14,12 @@ namespace Script.player.Inputs.Keyboard
             return Input.GetAxis("Vertical");
         }
 
-        public bool SpaseButton()
+        public bool KeySpase()
         {
             return Input.GetKeyDown(KeyCode.Space);
         }
 
-        public bool R_Button()
+        public bool KeyR()
         {
             return Input.GetKeyDown(KeyCode.R);
         }

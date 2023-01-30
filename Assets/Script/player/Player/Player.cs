@@ -23,18 +23,14 @@ public class Player : NetworkBehaviour
         NetworkVariableReadPermission.Everyone,
         NetworkVariableWritePermission.Owner);
 
-    private void Awake()
-    {
-        input.EnsureNotNull();
-        characterController = GetComponent<CharacterController>().EnsureNotNull();
-    }
+    private void Awake() => characterController = GetComponent<CharacterController>().EnsureNotNull();
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         if (IsOwner)
         {
-            input = new KeyBoardInput().EnsureNotNull();
+            input = new KeyBoardInput();
         }
     }
 
@@ -55,9 +51,5 @@ public class Player : NetworkBehaviour
             characterController.Move(Vector3.down * (Time.deltaTime * gravity));
         }
     }
-
-    private void Jump()
-    {
-        //TODO сделать прыжок
-    }
+    private void Jump() { /*TODO сделать прыжок */}
 }
