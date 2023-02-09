@@ -2,6 +2,8 @@ namespace Script.player.Player.heal
 {
     public interface IDamageable
     {
-        void Apply(int damage);
+        void ApplyDamage(int damage);
+
+        void ApplyHeal(int regenHeal);
     }
 }

@@ -9,6 +9,7 @@ namespace Script.player.Player.camera
     public class PlayerCamera : NetworkBehaviour
     {
         [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+        [SerializeField] private Camera camera;
         [SerializeField] private float speedMouse = 1000;
         private IInputMouse mouseInput = new PlugMouseInput();
         private int min = -90, max = 90;
@@ -31,7 +32,7 @@ namespace Script.player.Player.camera
         {
             base.OnNetworkSpawn();
             if (IsOwner) mouseInput = new KeyMouseInput();
-            if (!IsOwner) cinemachineVirtualCamera.enabled = false;
+            if (!IsOwner) camera.enabled = false;
         }
 
         private void Update()
@@ -39,6 +40,7 @@ namespace Script.player.Player.camera
             Physics.Raycast(transform.position, transform.forward, out var hit);
             Debug.DrawRay(transform.position,transform.forward,Color.green);
             HitCollider = hit.collider;
+            //TODO перенести в нормальное место
             
             if (IsOwner)
             {

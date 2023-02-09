@@ -1,9 +1,11 @@
+using Script.Other;
+using Script.UIMenu.mainMenu.WindowsUI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WindowHost : MonoBehaviour , IDragHandler
+[RequireComponent(typeof(OnDragWindow))]
+public class WindowHost : MonoBehaviour 
 {
     [SerializeField] private Button closeButton;
     [SerializeField] private Button startButton;
@@ -21,10 +23,5 @@ public class WindowHost : MonoBehaviour , IDragHandler
         startButton.EnsureNotNull().onClick.AddListener((() => mainCanvas.StartGameHost.Invoke()));
         chooseMap.EnsureNotNull();
         enterIP.EnsureNotNull().onValueChanged.AddListener((text => ipAddressText = text ));
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        //TODO перемещение курсором мыши
     }
 }

@@ -1,3 +1,4 @@
+using Script.Other;
 using Script.player.Inputs;
 using Script.player.Inputs.Keyboard;
 using Script.player.Inputs.Mouse;
@@ -19,7 +20,7 @@ namespace Script.player.Player.Hand
         private IGun weapon;
 
         public int WeaponAmmo { get; private set; }
-        public int WeaponStock { get; private set; }
+        public int WeaponStock { get; internal set; }
 
         private void Awake()
         {
@@ -40,8 +41,7 @@ namespace Script.player.Player.Hand
             if (canGrab)
             {
                 hand = Instantiate(weaponPrefab, hand.transform);
-                hand.TryGetComponent<IGun>(out var gun);
-                weapon = gun;
+                hand.TryGetComponent<IGun>(out weapon);
 
                 canGrab = false;
             

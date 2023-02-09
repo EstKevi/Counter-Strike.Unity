@@ -1,5 +1,7 @@
 using System;
 using Script;
+using Script.Other;
+using Script.UIMenu.mainMenu.WindowsUI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -50,7 +52,6 @@ public class MainCanvas : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
-        gameObject.SetActive(false);
     }
     
     public enum ModeGame

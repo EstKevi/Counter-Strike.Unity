@@ -17,9 +17,18 @@ namespace Script.weapon.AK_47
         private float previousShot;
         private int originalMeaningAmmo;
 
+        public Weapon(int stock)
+        {
+            Stock = stock;
+        }
+
         public int Ammo => ammo;
 
-        public int Stock => stock;
+        public int Stock
+        {
+            get => stock;
+            set => stock = value;
+        }
 
         private void Awake() => originalMeaningAmmo = ammo;
         
@@ -41,7 +50,7 @@ namespace Script.weapon.AK_47
 
             if (!obj.TryGetComponent<IDamageable>(out var heal)) return;
             
-            heal.Apply(damage);
+            heal.ApplyDamage(damage);
             print("damage");
         }
 

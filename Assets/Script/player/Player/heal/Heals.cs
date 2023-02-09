@@ -1,15 +1,28 @@
-using Script.player.Player.heal;
 using UnityEngine;
 
-public class Heals : MonoBehaviour, IDamageable
+namespace Script.player.Player.heal
 {
-    [SerializeField] private int heal;
-    public int Heal => heal;
-    public void Apply(int damage)
+    public class Heals : MonoBehaviour, IDamageable
     {
-        Debug.Log($"Damage: {damage}");
-        heal -= damage;
-        if (heal < 0)
-            heal = 0;
+        [SerializeField] private int heal;
+        public int Heal => heal;
+
+        public void ApplyHeal(int regenHeal)
+        {
+            while (heal + regenHeal > 100)
+            {
+                --regenHeal;
+            }
+
+            heal += regenHeal;
+        }
+    
+        public void ApplyDamage(int damage)
+        {
+            Debug.Log($"Damage: {damage}");
+            heal -= damage;
+            if (heal < 0)
+                heal = 0;
+        }
     }
 }

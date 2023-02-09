@@ -8,6 +8,6 @@ namespace Script.weapon
         void Reload();
 
         public int Ammo { get; }
-        public int Stock { get; }
+        public int Stock { get; set; }
     }
 }

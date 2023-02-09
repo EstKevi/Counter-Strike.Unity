@@ -1,5 +1,6 @@
 #nullable enable
 using Cinemachine;
+using Script.Other;
 using Script.player.Inputs.Keyboard;
 using Unity.Netcode;
 using Unity.Netcode.Components;
@@ -12,6 +13,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Player : NetworkBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cineCamera = null!;
+    [SerializeField] private Camera camera;
     [SerializeField] private float speed;
     [SerializeField] private float gravity;
     
@@ -42,7 +44,7 @@ public class Player : NetworkBehaviour
             var z = input.MoveVerticalZ();
 
             move.Value = new Vector3(x,0,z);
-            move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
+            move.Value = Quaternion.Euler(0, camera.transform.rotation.eulerAngles.y, 0) * move.Value;
         }
 
         if (IsServer)
