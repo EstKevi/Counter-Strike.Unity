@@ -13,8 +13,14 @@ namespace Script.Bonus.AnimatedBonus
         private void Start()
         {
             var endPosition = transform.position.y + endValue;
-            transform.DORotate(Vector3.up, durationRotate).SetLoops(-1, LoopType.Incremental);
-            transform.DOMoveY(endPosition, durationMoveUp).SetLoops(-1, LoopType.Yoyo);
+            transform.DORotate(
+                new Vector3(0, -360, 0),
+                durationRotate,
+                RotateMode.LocalAxisAdd
+            ).SetLoops(-1)
+            .SetEase(Ease.Linear);
+            
+            transform.DOMoveY(endPosition, durationMoveUp).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using Script.player.heal;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Script.weapon
 {
@@ -12,6 +13,9 @@ namespace Script.weapon
         [SerializeField] private int damage;
         [SerializeField] private float shootSpeed, reloadSpeed;
         [SerializeField] private bool canShoot, canReload;
+        public UnityEvent particleShootEvent = new();
+        public UnityEvent<float> reloadWeaponEvent = new();
+        
         private float previousShot;
         private int originalMeaningAmmo;
 
@@ -38,6 +42,7 @@ namespace Script.weapon
             print("bang");
             ammo.Value--;
             previousShot = Time.time;
+            particleShootEvent.Invoke();
 
             if (!obj.TryGetComponent<IDamageable>(out var heal)) return;
             heal.ApplyDamage(damage);
@@ -54,6 +59,7 @@ namespace Script.weapon
         private IEnumerator ReloadWeapon()
         {
             ChangeWeaponState();
+            reloadWeaponEvent.Invoke(reloadSpeed);
             
             yield return new WaitForSecondsRealtime(reloadSpeed);
 

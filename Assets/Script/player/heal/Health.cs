@@ -23,7 +23,7 @@ namespace Script.player.heal
                 heal.Value += value;
             }
         }
-
+        
         public void ApplyDamage(int dmg)
         {
             if (!IsOwner) return;
