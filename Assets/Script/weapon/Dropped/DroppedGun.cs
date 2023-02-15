@@ -1,16 +1,15 @@
 using System;
-using Script.Other;
-using Script.player.Player.Hand;
-using Unity.Netcode;
-using Unity.Netcode.Components;
-using UnityEngine;
+    using Script.Other;
+    using Script.player.Hand;
+    using Unity.Netcode.Components;
+    using UnityEngine;
 
 namespace Script.weapon.Dropped
 {
     [RequireComponent(typeof(NetworkRigidbody))]
     [RequireComponent(typeof(NetworkTransform))]
     [RequireComponent(typeof(Collider))]
-    public class DroppedGun : NetworkBehaviour
+    public class DroppedGun : MonoBehaviour
     {
         [SerializeField] private GameObject prefabWeapon;
 
@@ -18,7 +17,7 @@ namespace Script.weapon.Dropped
         {
             prefabWeapon.EnsureNotNull();
             var collider = GetComponent<Collider>().EnsureNotNull();
-            if (!collider.isTrigger)
+            if (collider.isTrigger is false)
             {
                 throw new Exception("must be trigger");
             }
@@ -27,6 +26,7 @@ namespace Script.weapon.Dropped
         private void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent<HandWeapon>(out var hand) || hand == null) return;
+
             if (hand.Grab(prefabWeapon))
             {
                 Destroy(gameObject);

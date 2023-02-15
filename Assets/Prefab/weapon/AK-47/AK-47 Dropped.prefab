@@ -135,7 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabWeapon: {fileID: 989823228082739675, guid: 1434c7394a70de8408237e3a5d55c64b,
     type: 3}
-  entryPoint: {fileID: 0}
 --- !u!1001 &372117629203597341
 PrefabInstance:
   m_ObjectHideFlags: 0

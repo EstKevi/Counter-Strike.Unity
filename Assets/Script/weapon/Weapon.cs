@@ -1,85 +1,73 @@
 using System.Collections;
-using Script.player.Player.heal;
+using Script.player.heal;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Script.weapon.AK_47
+namespace Script.weapon
 {
     public class Weapon : NetworkBehaviour, IGun
     {
-        [SerializeField] private int ammo;
-        [SerializeField] private int stock;
+        [SerializeField] private NetworkVariable<int> ammo = new();
+        [SerializeField] private NetworkVariable<int> stock = new();
         [SerializeField] private int damage;
-        [SerializeField] private float shootSpeed;
-        [SerializeField] private float reloadSpeed;
-        [SerializeField] private bool canShoot;
-        [SerializeField] private bool canReload;
+        [SerializeField] private float shootSpeed, reloadSpeed;
+        [SerializeField] private bool canShoot, canReload;
         private float previousShot;
         private int originalMeaningAmmo;
 
-        public Weapon(int stock)
-        {
-            Stock = stock;
-        }
-
-        public int Ammo => ammo;
+        public int Ammo => ammo.Value;
 
         public int Stock
         {
-            get => stock;
-            set => stock = value;
+            get => stock.Value;
+            set => stock.Value = value;
         }
 
-        private void Awake() => originalMeaningAmmo = ammo;
-        
+        private void Awake() => originalMeaningAmmo = ammo.Value;
+
         // ReSharper disable Unity.PerformanceAnalysis
         public void Shoot(Collider obj)
         {
-            if (canShoot is false || ammo == 0)
+            if (canShoot is false || ammo.Value == 0)
             {
                 Reload();
                 return;
             }
 
             if (!(Time.time - previousShot > shootSpeed)) return;
-
             print("bang");
-            ammo--;
-
+            ammo.Value--;
             previousShot = Time.time;
 
             if (!obj.TryGetComponent<IDamageable>(out var heal)) return;
-            
             heal.ApplyDamage(damage);
-            print("damage");
         }
 
         public void Reload()
         {
-            if (canReload && ammo < originalMeaningAmmo && stock != 0)
+            if (canReload && ammo.Value < originalMeaningAmmo && stock.Value != 0)
+            {
                 StartCoroutine(ReloadWeapon());
+            }
         }
 
         private IEnumerator ReloadWeapon()
         {
-            print("reload is started");
             ChangeWeaponState();
             
             yield return new WaitForSecondsRealtime(reloadSpeed);
 
-            var cartridges = originalMeaningAmmo - ammo;
+            var cartridges = originalMeaningAmmo - ammo.Value;
 
-            while (stock - cartridges < 0)
+            while (stock.Value - cartridges < 0)
             {
                 cartridges--;
             }
 
-            stock -= cartridges;
-            ammo += cartridges;
+            stock.Value -= cartridges;
+            ammo.Value += cartridges;
             
             ChangeWeaponState();
-
-            print("reload is ended");
         }
 
         private void ChangeWeaponState()

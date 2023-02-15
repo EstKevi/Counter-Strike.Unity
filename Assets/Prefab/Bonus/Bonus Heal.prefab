@@ -209,7 +209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9033004785715513078}
   - component: {fileID: 4977881796646641356}
-  - component: {fileID: 2144227638948430233}
+  - component: {fileID: -5012907349014763247}
+  - component: {fileID: 8405271512617842657}
   m_Layer: 0
   m_Name: Bonus Heal
   m_TagString: Untagged
@@ -225,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564347568126964836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0013476, y: 1.5301, z: -5.6463}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.36099002, y: 0.36099002, z: 0.36099002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -246,7 +247,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7657744, y: 1.9867085, z: 2.1042151}
   m_Center: {x: -0.021681419, y: 0.66976666, z: -0.03585624}
---- !u!114 &2144227638948430233
+--- !u!114 &-5012907349014763247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,11 +256,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7564347568126964836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f2d90f193c5d547a657af22827ab3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f6e29a895aa40e4a396921fdff5aee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restoreHealth: 50
-  resetBonusFromSeconds: 180
   durationRotate: 0.01
-  durationMove: 1.1
+  durationMoveUp: 1.1
   endValue: 0.3
+--- !u!114 &8405271512617842657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564347568126964836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f9705cb7d44e18a350e85441d5d2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusType: {fileID: 0}

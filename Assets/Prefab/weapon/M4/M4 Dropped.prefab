@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4649161670225489824}
   - component: {fileID: 4649161670225489828}
   - component: {fileID: 4649161670225489831}
+  - component: {fileID: 1910341597}
   - component: {fileID: 4649161670225489830}
   - component: {fileID: 4649161670225489825}
   - component: {fileID: 3563930532476577816}
-  - component: {fileID: 1910341597}
   m_Layer: 0
   m_Name: M4 Dropped
   m_TagString: Untagged
@@ -80,6 +80,19 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!65 &1910341597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4649161670225489827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2891955, y: 1.1326795, z: 2.2550259}
+  m_Center: {x: -0.02015233, y: 0.009231329, z: 0.055500984}
 --- !u!114 &4649161670225489830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,19 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabWeapon: {fileID: 299054567706454305, guid: 7442d0dfaebc5bf4293f79ca0c1ce3d8,
     type: 3}
---- !u!65 &1910341597
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4649161670225489827}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2891955, y: 1.1326795, z: 2.2550259}
-  m_Center: {x: -0.02015233, y: 0.009231329, z: 0.055500984}
 --- !u!1001 &4649161671654079522
 PrefabInstance:
   m_ObjectHideFlags: 0

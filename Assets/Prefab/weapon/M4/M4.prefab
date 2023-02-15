@@ -89,8 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a4c302fbdc4ecd8d1e4afa6ab9bc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 25
-  stock: 75
+  ammo:
+    m_InternalValue: 25
+  stock:
+    m_InternalValue: 75
   damage: 21
   shootSpeed: 0.145
   reloadSpeed: 2

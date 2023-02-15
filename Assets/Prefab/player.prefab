@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5926298562518126238}
   - component: {fileID: 3812052251518442653}
-  - component: {fileID: 2347071024202976420}
   - component: {fileID: 1101572707921594729}
+  - component: {fileID: 2347071024202976420}
+  - component: {fileID: 1833978831404563893}
   m_Layer: 0
   m_Name: camera
   m_TagString: Untagged
@@ -74,6 +75,32 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1529917364280210802}
+--- !u!114 &1101572707921594729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372122932018533846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 0
+  SyncPositionY: 0
+  SyncPositionZ: 0
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 0
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
 --- !u!114 &2347071024202976420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinemachineVirtualCamera: {fileID: 3812052251518442653}
   speedMouse: 1000
---- !u!114 &1101572707921594729
+--- !u!114 &1833978831404563893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,23 +124,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372122932018533846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8459ccf544f4f204c9da16aed9996b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.01
-  InLocalSpace: 0
-  Interpolate: 1
+  hitCollider: {fileID: 0}
 --- !u!1 &4747555219743382621
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,15 +216,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SyncPositionX: 1
-  SyncPositionY: 1
-  SyncPositionZ: 1
+  SyncPositionX: 0
+  SyncPositionY: 0
+  SyncPositionZ: 0
   SyncRotAngleX: 1
   SyncRotAngleY: 1
-  SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncRotAngleZ: 0
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -231,9 +245,11 @@ GameObject:
   - component: {fileID: 8225736895117926422}
   - component: {fileID: 8225736895117926423}
   - component: {fileID: 159171917604673863}
-  - component: {fileID: 9180107482092227737}
   - component: {fileID: 4633413037540180092}
+  - component: {fileID: 9180107482092227737}
+  - component: {fileID: 7200767435688185878}
   - component: {fileID: 1046450307638126036}
+  - component: {fileID: 710552788161302643}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -359,9 +375,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -379,24 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63a6ecff6942be42968fe25f4e8974d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cineCamera: {fileID: 3812052251518442653}
-  speed: 10
-  gravity: 10
---- !u!114 &9180107482092227737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225736895117926421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec577e501ad8da4a98908664c95b9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 2347071024202976420}
-  hand: {fileID: 6805225756052748577}
-  canGrab: 1
+  entryPoint: {fileID: 0}
+  playerInfo: {fileID: 1046450307638126036}
 --- !u!114 &4633413037540180092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +409,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5396ad4d5cd49e64f90d7cb51d25d9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 100
+  heal:
+    m_InternalValue: 100
+--- !u!114 &9180107482092227737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec577e501ad8da4a98908664c95b9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRaycast: {fileID: 1833978831404563893}
+  hand: {fileID: 6805225756052748577}
+--- !u!114 &7200767435688185878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fceed318ee9f446b91cae986dd44a508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cineCamera: {fileID: 3812052251518442653}
+  speed: 10
+  gravity: 10
 --- !u!114 &1046450307638126036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +452,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7aa3d20c14622143b05f899b55d9e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryPoint: {fileID: 0}
-  heal: {fileID: 4633413037540180092}
+  health: {fileID: 4633413037540180092}
   hand: {fileID: 9180107482092227737}
+  reactiveProperties:
+  - value: 0
+  - value: 0
+  - value: 0
+  ChangesStatsEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &710552788161302643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70ba2aab7e7492f867098dc7144c48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4633413037540180092}
+  handWeapon: {fileID: 9180107482092227737}

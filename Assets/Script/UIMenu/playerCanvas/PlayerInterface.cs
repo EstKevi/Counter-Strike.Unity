@@ -1,22 +1,24 @@
-using System;
 using Script.Other;
 using TMPro;
 using UnityEngine;
 
-public class PlayerInterface : MonoBehaviour
+namespace Script.UIMenu.playerCanvas
 {
-    [SerializeField] private TMP_Text healsText;
-    [SerializeField] private TMP_Text ammoText;
-
-    private void Awake()
+    public class PlayerInterface : MonoBehaviour
     {
-        healsText.EnsureNotNull();
-        ammoText.EnsureNotNull();
-    }
+        [SerializeField] private TMP_Text healsText;
+        [SerializeField] private TMP_Text ammoText;
 
-    public void PlayerStatsSet(int ammo, int stock, int heal)
-    {
-        healsText.text = $"HP {heal}";
-        ammoText.text = $"{ammo} | {stock}";
+        private void Awake()
+        {
+            healsText.EnsureNotNull();
+            ammoText.EnsureNotNull();
+        }
+
+        public void PlayerStatsSet(int heal, int ammo, int stock)
+        {
+            healsText.text = $"HP {heal}";
+            ammoText.text = $"{ammo} | {stock}";
+        }
     }
 }
