@@ -43,6 +43,11 @@ namespace Script.player
                 
                 move.Value = new Vector3(x, 0, z);
                 move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
+                if (input.KeySpase())
+                {
+                    Jump();
+                    Debug.Log("jump");
+                }
             }
 
             if (IsServer)
@@ -54,7 +59,9 @@ namespace Script.player
 
         private void Jump()
         {
-            /*TODO сделать прыжок */
+            if (!IsServer) return;
+
+            characterController.Move(transform.position += new Vector3(0, 5, 0));
         }
     }
 }

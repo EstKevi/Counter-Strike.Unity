@@ -1,6 +1,7 @@
 using System;
+using Script.Bonus.BonusCore;
 using Script.Other;
-using Script.player.Bonus;
+using Script.player;
 using UnityEngine;
 
 namespace Script.Bonus
@@ -12,18 +13,14 @@ namespace Script.Bonus
         private void Awake()
         {
             bonusType.EnsureNotNull();
-            
-            if(!GetComponent<Collider>().EnsureNotNull().isTrigger)
-            {
-                throw new Exception("Must be \"Trigger\"");
-            }
+            if(GetComponent<Collider>().EnsureNotNull().isTrigger) return;
+            throw new Exception("Must be \"Trigger\"");
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent<IApplyBonus>(out var useBonus)) return;
-
-            if (useBonus.ApplyBonus(bonusType))
+            if(!other.TryGetComponent<Player>(out _)) return;
+            if (bonusType.ApplyBonus(other.gameObject))
             {
                 Destroy(gameObject);
             }

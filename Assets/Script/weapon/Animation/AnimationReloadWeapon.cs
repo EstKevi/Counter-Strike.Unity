@@ -10,7 +10,7 @@ namespace Script.weapon.Animation
         [SerializeField] private Weapon weapon;
         [SerializeField] private Transform animatedPoint;
         [SerializeField] private Vector3 endValue;
-        
+
         private void Awake()
         {
             weapon.EnsureNotNull();
@@ -21,7 +21,6 @@ namespace Script.weapon.Animation
 
         private void AnimationWeapon(float time)
         {
-            //TODO normal time for animation
             var firstPartAnimated = time / 2;
             animatedPoint.transform.DOLocalRotate(endValue, firstPartAnimated).SetLoops(2,LoopType.Yoyo);
         }

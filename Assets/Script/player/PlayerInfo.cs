@@ -44,6 +44,5 @@ namespace Script.player
             reactiveProperties[1].Value = health.Heal;
             reactiveProperties[2].Value = hand.WeaponStock;
         }
-    
     }
 }

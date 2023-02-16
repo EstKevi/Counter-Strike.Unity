@@ -6,21 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Bonus/Bonus Ammo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Bonus/Bonus Ammo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Bonus/Bonus Heal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Bonus/Bonus Heal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/weapon/M4/M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/weapon/M4/M4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/AnimatedBonus/AnimatedRotateBonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/AnimatedBonus/AnimatedRotateBonus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/heal/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/heal/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/Bonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/Bonus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/BonusCore/BonusBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/BonusCore/BonusBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/BonusType/AmmoBonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/BonusType/AmmoBonus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Bonus/BonusType/HealthBonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Bonus/BonusType/HealthBonus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Bonus.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Bonus/ApplyBonusPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Bonus/ApplyBonusPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Bonus/IApplyBonus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Bonus/IApplyBonus.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/Animation/AnimationReloadWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/Animation/AnimationReloadWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +162,9 @@
       <workItem from="1676412065328" duration="1592000" />
       <workItem from="1676457054017" duration="4588000" />
       <workItem from="1676475772275" duration="599000" />
-      <workItem from="1676486264716" duration="8205000" />
+      <workItem from="1676486264716" duration="8465000" />
+      <workItem from="1676538590812" duration="6573000" />
+      <workItem from="1676564399090" duration="1995000" />
     </task>
     <servers />
   </component>
