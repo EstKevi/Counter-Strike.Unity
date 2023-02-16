@@ -10,9 +10,7 @@ namespace Script.Bonus.BonusType
         
         public override bool ApplyBonus(GameObject obj)
         {
-            if (!obj.TryGetComponent<HandWeapon>(out var handPlayer)) return false;
-            handPlayer.ApplyStockBonus(ammo);
-            return true;
+            return obj.TryGetComponent<HandWeapon>(out var handPlayer) && handPlayer.ApplyStockBonus(ammo);
         }
     }
 }
