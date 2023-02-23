@@ -1,7 +1,8 @@
 #nullable enable
-using Cinemachine;
 using Script.Other;
+using Cinemachine;
 using Script.player.Inputs.Keyboard;
+using Script.player.PlayerBody.Jump;
 using Unity.Netcode;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -11,10 +12,12 @@ namespace Script.player
     [RequireComponent(typeof(Player))]
     public class PlayerMove : NetworkBehaviour
     {
-        [SerializeField] private CinemachineVirtualCamera cineCamera = null!;
+        [SerializeField] private CinemachineVirtualCamera Camera = null!;
+        [SerializeField] private RayJump jump = null!;
+        [SerializeField] private float powerJump;
         [SerializeField] private float speed;
         [SerializeField] private float gravity;
-
+        
         private IInput input = new PlugInput();
         private CharacterController characterController = null!;
 
@@ -23,15 +26,28 @@ namespace Script.player
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner);
         
-        private void Awake() => characterController = GetComponent<CharacterController>().EnsureNotNull();
+        private void Awake()
+        {
+            characterController = GetComponent<CharacterController>().EnsureNotNull();
+            jump.EnsureNotNull();
+        }
+
+        private void Start()
+        {
+            if(!IsOwner) return;
+            if (characterController == null)
+            {
+                characterController = GetComponent<CharacterController>();
+            }
+
+            characterController.EnsureNotNull();
+        }
 
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
-            if (IsOwner)
-            {
-                input = new KeyBoardInput();
-            }
+            if(!IsOwner) return;
+            input = new KeyBoardInput();
         }
 
         private void Update()
@@ -40,13 +56,11 @@ namespace Script.player
             {
                 var x = input.MoveHorizontalX();
                 var z = input.MoveVerticalZ();
-                
-                move.Value = new Vector3(x, 0, z);
-                move.Value = Quaternion.Euler(0, cineCamera.transform.rotation.eulerAngles.y, 0) * move.Value;
-                if (input.KeySpase())
+
+                move.Value = Quaternion.Euler(0, Camera.transform.rotation.eulerAngles.y, 0) * new Vector3(x, 0, z);
+                if (jump.Jump() && input.KeySpace())
                 {
-                    Jump();
-                    Debug.Log("jump");
+                    JumpPlayer();
                 }
             }
 
@@ -57,11 +71,18 @@ namespace Script.player
             }
         }
 
-        private void Jump()
+        private void JumpPlayer()
         {
-            if (!IsServer) return;
-
-            characterController.Move(transform.position += new Vector3(0, 5, 0));
+            if(IsOwner)
+            {
+                move.Value += new Vector3(0, powerJump, 0);
+            }
         }
+
+        // public void MoveInput()
+        // {
+        //     if(!IsOwner) return;
+        //     input = new KeyBoardInput();
+        // }
     }
 }

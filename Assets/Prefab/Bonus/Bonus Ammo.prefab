@@ -332,8 +332,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5068720936332438257}
   - component: {fileID: 5068720936332438258}
-  - component: {fileID: 1392177044314984986}
   - component: {fileID: 346100615842747399}
+  - component: {fileID: 1392177044314984986}
   m_Layer: 0
   m_Name: Bonus Ammo
   m_TagString: Untagged
@@ -370,21 +370,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2131276, y: 2.170152, z: 2.161563}
   m_Center: {x: -0.0272866, y: 0.4939904, z: -0.044804715}
---- !u!114 &1392177044314984986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5068720936332438260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f6e29a895aa40e4a396921fdff5aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durationRotate: 1
-  durationMoveUp: 1.1
-  endValue: 0.3
 --- !u!114 &346100615842747399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +383,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusType: {fileID: 0}
+--- !u!114 &1392177044314984986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068720936332438260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6e29a895aa40e4a396921fdff5aee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationRotate: 3
+  durationMoveUp: 1.1
+  endValue: 0.3
 --- !u!1 &5068720936479976663
 GameObject:
   m_ObjectHideFlags: 0

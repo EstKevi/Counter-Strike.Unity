@@ -6,7 +6,7 @@ namespace Script.player.Inputs.Keyboard
     
         public float MoveVerticalZ();
     
-        public bool KeySpase();
+        public bool KeySpace();
 
         public bool KeyR();
     }

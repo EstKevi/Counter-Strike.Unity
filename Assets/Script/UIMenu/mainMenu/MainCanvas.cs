@@ -1,62 +1,66 @@
 using System;
-using Script;
 using Script.Other;
 using Script.UIMenu.mainMenu.WindowsUI;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MainCanvas : MonoBehaviour
+namespace Script.UIMenu.mainMenu
 {
-    [SerializeField] private EntryPoint entryPoint;
-    [SerializeField] private WindowHost windowHost;
-    [SerializeField] private WindowConnect windowConnect;
-
-    public UnityEvent StartGameHost = new();
-    public UnityEvent StartGameClient = new();
-
-    private void Awake()
+    public class MainCanvas : MonoBehaviour
     {
-        entryPoint.EnsureNotNull();
-        windowHost.EnsureNotNull();
-        windowConnect.EnsureNotNull();
-    }
+        [SerializeField] private EntryPoint entryPoint;
+        [SerializeField] private WindowHost windowHost;
+        [SerializeField] private WindowConnect windowConnect;
 
-    private void Start()
-    {
-        StartGameHost.AddListener(() => 
-            StartGame(
-                windowHost.IpAddressHost(),
-                ModeGame.Host)
+        public EntryPoint EntryPoint => entryPoint;
+
+        public UnityEvent StartGameHost = new();
+        public UnityEvent StartGameClient = new();
+
+        private void Awake()
+        {
+            entryPoint.EnsureNotNull();
+            windowHost.EnsureNotNull();
+            windowConnect.EnsureNotNull();
+        }
+
+        private void Start()
+        {
+            StartGameHost.AddListener(() => 
+                StartGame(
+                    windowHost.IpAddressHost(),
+                    ModeGame.Host)
             );
         
-        StartGameClient.AddListener(() =>
-            StartGame(
-                windowConnect.IpAddressConnect(), 
-                ModeGame.Client)
+            StartGameClient.AddListener(() =>
+                StartGame(
+                    windowConnect.IpAddressConnect(), 
+                    ModeGame.Client)
             );
-    }
-
-    private void StartGame(string address, ModeGame mode)
-    {
-        entryPoint.ChangeIpAddress(address);
-        switch (mode)
-        {
-            case ModeGame.Host:
-                entryPoint.StartGame(ModeGame.Host);
-                break;
-            
-            case ModeGame.Client:
-                entryPoint.StartGame(ModeGame.Client);
-                break;
-            
-            default:
-                throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
-    }
+
+        private void StartGame(string address, ModeGame mode)
+        {
+            entryPoint.ChangeIpAddress(address);
+            switch (mode)
+            {
+                case ModeGame.Host:
+                    entryPoint.StartGame(ModeGame.Host);
+                    break;
+            
+                case ModeGame.Client:
+                    entryPoint.StartGame(ModeGame.Client);
+                    break;
+            
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
+            }
+        }
     
-    public enum ModeGame
-    {
-        Host,
-        Client
+        public enum ModeGame
+        {
+            Host,
+            Client
+        }
     }
 }

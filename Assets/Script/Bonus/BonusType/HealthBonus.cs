@@ -1,5 +1,6 @@
 using Script.Bonus.BonusCore;
 using Script.player.heal;
+using Script.player.PlayerBody.heal;
 using UnityEngine;
 
 namespace Script.Bonus.BonusType

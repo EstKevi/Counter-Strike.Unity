@@ -4,7 +4,7 @@ namespace Script.weapon
 {
     public interface IGun
     {
-        void Shoot(Collider obj);
+        void Shoot(Collider _);
         void Reload();
 
         public int Ammo { get; }

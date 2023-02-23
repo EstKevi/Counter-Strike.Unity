@@ -1,4 +1,5 @@
 using System;
+using Script.UIMenu.mainMenu;
 using Script.UIMenu.playerCanvas;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -13,14 +14,15 @@ namespace Script.Other
         [SerializeField] private UnityTransport unityTransport;
         [SerializeField] private MainCanvas mainCanvas;
         [SerializeField] private PlayerInterface playerInterface;
-        [Space] public UnityEvent startGameUnityEvent = new();
-        
-        
+        [SerializeField] private GameObject weaponCanvas;
+        public UnityEvent startGameUnityEvent = new();
+
         private void Awake()
         {
             playerInterface.EnsureNotNull();
             unityTransport.EnsureNotNull();
             networkManager.EnsureNotNull();
+            weaponCanvas.EnsureNotNull();
             mainCanvas.EnsureNotNull();
         }
 
@@ -28,8 +30,9 @@ namespace Script.Other
         {
             startGameUnityEvent.AddListener(() =>
             {
-                playerInterface.gameObject.SetActive(true);
+                // weaponCanvas.gameObject.SetActive(true);
                 mainCanvas.gameObject.SetActive(false);
+                playerInterface.gameObject.SetActive(true);
             });
         }
 
@@ -48,14 +51,12 @@ namespace Script.Other
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameMode), gameMode, null);
             }
+
             startGameUnityEvent.Invoke();
         }
 
         public void ChangeIpAddress(string address) => unityTransport.ConnectionData.Address = address;
 
-        public void ChangeStats(int heal, int ammo, int stock)
-        {
-            playerInterface.PlayerStatsSet(heal, ammo, stock);
-        }
+        public void ChangeStats(int heal, int ammo, int stock) => playerInterface.PlayerStatsSet(heal, ammo, stock);
     }
 }

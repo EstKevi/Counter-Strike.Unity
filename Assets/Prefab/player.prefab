@@ -249,10 +249,11 @@ GameObject:
   - component: {fileID: 9180107482092227737}
   - component: {fileID: 7200767435688185878}
   - component: {fileID: 1046450307638126036}
-  - component: {fileID: 710552788161302643}
+  - component: {fileID: 3171699798026597773}
+  - component: {fileID: 8166699289326927592}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 0}
   playerInfo: {fileID: 1046450307638126036}
+  playerCamera: {fileID: 2347071024202976420}
+  handWeapon: {fileID: 9180107482092227737}
+  playerMove: {fileID: 7200767435688185878}
 --- !u!114 &4633413037540180092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal:
     m_InternalValue: 100
+  playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9180107482092227737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,9 +444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fceed318ee9f446b91cae986dd44a508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cineCamera: {fileID: 3812052251518442653}
+  Camera: {fileID: 3812052251518442653}
+  jump: {fileID: 3171699798026597773}
+  powerJump: 21.4
   speed: 10
-  gravity: 10
+  gravity: 4.83
 --- !u!114 &1046450307638126036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,10 +467,10 @@ MonoBehaviour:
   - value: 0
   - value: 0
   - value: 0
-  ChangesStatsEvent:
+  changesStatsEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &710552788161302643
+--- !u!114 &3171699798026597773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,8 +479,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8225736895117926421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70ba2aab7e7492f867098dc7144c48a, type: 3}
+  m_Script: {fileID: 11500000, guid: b63339e5e49e4e98a0e141b25569fc1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 4633413037540180092}
+  maxDistance: 1.1
+  canJump:
+    m_InternalValue: 0
+--- !u!114 &8166699289326927592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b2522f510341049059c868f7154d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponArray:
+  - {fileID: 989823228082739675, guid: 1434c7394a70de8408237e3a5d55c64b, type: 3}
+  - {fileID: 299054567706454305, guid: 7442d0dfaebc5bf4293f79ca0c1ce3d8, type: 3}
+  hand: {fileID: 6805225756052748577}
+  isSpawnedWeapon: 0
   handWeapon: {fileID: 9180107482092227737}

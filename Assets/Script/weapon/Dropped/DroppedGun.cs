@@ -1,7 +1,7 @@
 using System;
     using Script.Other;
-    using Script.player.Hand;
-    using Unity.Netcode.Components;
+using Script.player.PlayerBody.Hand;
+using Unity.Netcode.Components;
     using UnityEngine;
 
 namespace Script.weapon.Dropped

@@ -14,7 +14,7 @@ namespace Script.player.Inputs.Keyboard
             return Input.GetAxis("Vertical");
         }
 
-        public bool KeySpase()
+        public bool KeySpace()
         {
             return Input.GetKeyDown(KeyCode.Space);
         }

@@ -12,6 +12,5 @@ namespace Script.player
             Physics.Raycast(transform.position, transform.forward, out var hit);
             hitCollider = hit.collider;
         }
-    
     }
 }

@@ -209,8 +209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9033004785715513078}
   - component: {fileID: 4977881796646641356}
-  - component: {fileID: -5012907349014763247}
   - component: {fileID: 8405271512617842657}
+  - component: {fileID: -5012907349014763247}
   m_Layer: 0
   m_Name: Bonus Heal
   m_TagString: Untagged
@@ -247,21 +247,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7657744, y: 1.9867085, z: 2.1042151}
   m_Center: {x: -0.021681419, y: 0.66976666, z: -0.03585624}
---- !u!114 &-5012907349014763247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7564347568126964836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f6e29a895aa40e4a396921fdff5aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durationRotate: 1
-  durationMoveUp: 1.1
-  endValue: 0.3
 --- !u!114 &8405271512617842657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,3 +260,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusType: {fileID: 0}
+--- !u!114 &-5012907349014763247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564347568126964836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6e29a895aa40e4a396921fdff5aee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationRotate: 3
+  durationMoveUp: 1.1
+  endValue: 0.3

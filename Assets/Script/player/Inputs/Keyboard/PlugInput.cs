@@ -12,7 +12,7 @@ namespace Script.player.Inputs.Keyboard
             return 0;
         }
 
-        public bool KeySpase()
+        public bool KeySpace()
         {
             return false;
         }
