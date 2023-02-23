@@ -33,11 +33,12 @@ namespace Script.player.PlayerBody.camera
             {
                 cinemachineVirtualCamera.enabled = false;
             }
-            else
-            {
-                mouseInput = new KeyMouseInput();
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+            //todo
+            // else
+            // {
+            //     mouseInput = new KeyMouseInput();
+            //     Cursor.lockState = CursorLockMode.Locked;
+            // }
         }
 
         private void Update()

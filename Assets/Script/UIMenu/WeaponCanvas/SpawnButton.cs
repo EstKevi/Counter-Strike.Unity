@@ -1,10 +1,12 @@
 using Script.Other;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.UIMenu.WeaponCanvas
 {
     public class SpawnButton : MonoBehaviour
     {
+        [SerializeField] private WeaponCanvas weaponCanvas;
         [SerializeField] private WeaponDictionary weaponDictionary;
         [SerializeField] private ButtonWeapon buttonWeaponPrefab;
         
@@ -13,7 +15,9 @@ namespace Script.UIMenu.WeaponCanvas
             weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
             for (int i = 0; i < weaponDictionary.CountWeaponDictionary; i++)
             {
-                Instantiate(buttonWeaponPrefab, transform).SetValue(weaponDictionary.GetWeapon(i));
+                var button = Instantiate(buttonWeaponPrefab, transform);
+                // button.SetValue(weaponDictionary.GetWeapon(i));
+                // button.GetComponent<Button>().onClick.AddListener(() => weaponCanvas.chooseWeaponEvent.Invoke(i));
             }
         }
     }

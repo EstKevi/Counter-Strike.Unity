@@ -43,12 +43,13 @@ namespace Script.player
             characterController.EnsureNotNull();
         }
 
-        public override void OnNetworkSpawn()
-        {
-            base.OnNetworkSpawn();
-            if(!IsOwner) return;
-            input = new KeyBoardInput();
-        }
+        //todo
+        // public override void OnNetworkSpawn()
+        // {
+        //     base.OnNetworkSpawn();
+        //     if(!IsOwner) return;
+        //     input = new KeyBoardInput();
+        // }
 
         private void Update()
         {

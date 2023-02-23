@@ -2,6 +2,7 @@ using Script.Other;
 using Script.weapon;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Script.UIMenu.WeaponCanvas
@@ -13,7 +14,7 @@ namespace Script.UIMenu.WeaponCanvas
 
         private void Awake()
         {
-            button.EnsureNotNull();
+            button.EnsureNotNull().onClick.AddListener(() => Debug.Log("hello"));
             text.EnsureNotNull();
         }
 
