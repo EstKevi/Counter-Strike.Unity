@@ -17,6 +17,7 @@ namespace Script.player
         [SerializeField] private float powerJump;
         [SerializeField] private float speed;
         [SerializeField] private float gravity;
+        [SerializeField] private Player player = null!;
         
         private IInput input = new PlugInput();
         private CharacterController characterController = null!;
@@ -29,27 +30,19 @@ namespace Script.player
         private void Awake()
         {
             characterController = GetComponent<CharacterController>().EnsureNotNull();
+            player.EnsureNotNull();
             jump.EnsureNotNull();
         }
 
         private void Start()
         {
-            if(!IsOwner) return;
-            if (characterController == null)
-            {
-                characterController = GetComponent<CharacterController>();
-            }
-
-            characterController.EnsureNotNull();
+            player.moveEvent.AddListener(() =>
+                {
+                    if (!IsOwner) return;
+                    input = new KeyBoardInput();
+                }
+            );
         }
-
-        //todo
-        // public override void OnNetworkSpawn()
-        // {
-        //     base.OnNetworkSpawn();
-        //     if(!IsOwner) return;
-        //     input = new KeyBoardInput();
-        // }
 
         private void Update()
         {

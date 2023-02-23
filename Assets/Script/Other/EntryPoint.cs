@@ -1,6 +1,7 @@
 using System;
 using Script.UIMenu.mainMenu;
 using Script.UIMenu.playerCanvas;
+using Script.UIMenu.WeaponCanvas;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
@@ -14,8 +15,9 @@ namespace Script.Other
         [SerializeField] private UnityTransport unityTransport;
         [SerializeField] private MainCanvas mainCanvas;
         [SerializeField] private PlayerInterface playerInterface;
-        [SerializeField] private GameObject weaponCanvas;
+        [SerializeField] private WeaponCanvas weaponCanvas;
         public UnityEvent startGameUnityEvent = new();
+        public UnityEvent<int> weaponId = new();
 
         private void Awake()
         {
@@ -29,11 +31,19 @@ namespace Script.Other
         private void Start()
         {
             startGameUnityEvent.AddListener(() =>
-            {
-                // weaponCanvas.gameObject.SetActive(true);
-                mainCanvas.gameObject.SetActive(false);
-                playerInterface.gameObject.SetActive(true);
-            });
+                {
+                    weaponCanvas.gameObject.SetActive(true);
+                    mainCanvas.gameObject.SetActive(false);
+                }
+            );
+
+            weaponCanvas.chooseWeaponEvent.AddListener(arg0 =>
+                {
+                    weaponId.Invoke(arg0);
+                    weaponCanvas.gameObject.SetActive(false);
+                    playerInterface.gameObject.SetActive(true);
+                }
+            );
         }
 
         public void StartGame(MainCanvas.ModeGame gameMode)

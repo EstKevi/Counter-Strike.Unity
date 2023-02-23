@@ -9,7 +9,7 @@ namespace Script.UIMenu.WeaponCanvas
 
         private void Start()
         {
-            chooseWeaponEvent.AddListener(arg0 => Debug.Log($"ID: {arg0}"));
+            chooseWeaponEvent.AddListener(_ => gameObject.SetActive(false));
         }
     }
 }

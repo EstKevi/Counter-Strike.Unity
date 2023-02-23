@@ -15,9 +15,10 @@ namespace Script.UIMenu.WeaponCanvas
             weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
             for (int i = 0; i < weaponDictionary.CountWeaponDictionary; i++)
             {
+                var weaponKey = i;
                 var button = Instantiate(buttonWeaponPrefab, transform);
-                // button.SetValue(weaponDictionary.GetWeapon(i));
-                // button.GetComponent<Button>().onClick.AddListener(() => weaponCanvas.chooseWeaponEvent.Invoke(i));
+                button.SetValue(weaponDictionary.GetWeapon(weaponKey));
+                button.GetComponent<Button>().onClick.AddListener(() => weaponCanvas.chooseWeaponEvent.Invoke(weaponKey));
             }
         }
     }

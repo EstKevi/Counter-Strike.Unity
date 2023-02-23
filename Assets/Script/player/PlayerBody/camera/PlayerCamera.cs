@@ -11,6 +11,7 @@ namespace Script.player.PlayerBody.camera
     {
         [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
         [SerializeField] private float speedMouse = 1000;
+        [SerializeField] private Player player;
         private IInputMouse mouseInput = new PlugMouseInput();
         private int minRotateCamera = -90, maxRotateCamera = 90;
 
@@ -24,7 +25,22 @@ namespace Script.player.PlayerBody.camera
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner);
 
-        private void Awake() => cinemachineVirtualCamera.EnsureNotNull();
+        private void Awake()
+        {
+            cinemachineVirtualCamera.EnsureNotNull();
+            player.EnsureNotNull();
+        }
+        
+        private void Start()
+        {
+            player.moveEvent.AddListener(() =>
+                {
+                    if (!IsOwner) return;
+                    mouseInput = new KeyMouseInput();
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+            );
+        }
 
         public override void OnNetworkSpawn()
         {
@@ -33,12 +49,6 @@ namespace Script.player.PlayerBody.camera
             {
                 cinemachineVirtualCamera.enabled = false;
             }
-            //todo
-            // else
-            // {
-            //     mouseInput = new KeyMouseInput();
-            //     Cursor.lockState = CursorLockMode.Locked;
-            // }
         }
 
         private void Update()
