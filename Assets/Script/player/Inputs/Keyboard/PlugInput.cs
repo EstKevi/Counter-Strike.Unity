@@ -21,5 +21,10 @@ namespace Script.player.Inputs.Keyboard
         {
             return false;
         }
+
+        public bool KeyEscape()
+        {
+            return false;
+        }
     }
 }

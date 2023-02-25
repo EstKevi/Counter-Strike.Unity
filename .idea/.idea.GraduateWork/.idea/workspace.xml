@@ -9,18 +9,19 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/ButtonWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/ButtonWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/WeaponCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/WeaponCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoaredInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoaredInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Jump/RayJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Jump/RayJump.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/camera/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/camera/PlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/mainMenu/WindowsUI/OnDragWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Menu/PlayerMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/weapon/Animation/AnimationReloadWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.2/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Components/NetworkTransform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -192,7 +194,8 @@
       <workItem from="1677100183200" duration="10000" />
       <workItem from="1677130319954" duration="3440000" />
       <workItem from="1677169344872" duration="3992000" />
-      <workItem from="1677178141546" duration="9682000" />
+      <workItem from="1677178141546" duration="19155000" />
+      <workItem from="1677298034356" duration="6289000" />
     </task>
     <servers />
   </component>

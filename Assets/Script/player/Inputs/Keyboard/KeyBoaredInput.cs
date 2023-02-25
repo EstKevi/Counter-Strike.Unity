@@ -23,5 +23,10 @@ namespace Script.player.Inputs.Keyboard
         {
             return Input.GetKeyDown(KeyCode.R);
         }
+
+        public bool KeyEscape()
+        {
+            return Input.GetKeyDown(KeyCode.Escape);
+        }
     }
 }

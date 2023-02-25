@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Script.player.PlayerBody.camera;
 using Script.player.PlayerBody.Hand;
 using Script.player.PlayerBody.heal;
 using Unity.Netcode.Components;
 using Unity.Netcode;
 using Script.Other;
+using Script.player.Inputs.Keyboard;
+using Script.player.Menu;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Script.player
 {
@@ -23,13 +21,11 @@ namespace Script.player
     {
         [SerializeField] private EntryPoint entryPoint;
         [SerializeField] private PlayerInfo playerInfo;
-        [SerializeField] private PlayerCamera playerCamera;
         [SerializeField] private HandWeapon handWeapon;
-        [SerializeField] private PlayerMove playerMove;
+        [SerializeField] private PlayerMenu playerMenu;
         [SerializeField] private WeaponDictionary weaponDictionary;
 
-        public UnityEvent moveEvent = new();
-
+        private IInput input = new PlugInput();
         private NetworkVariable<int> weaponId = new(
             0,
             NetworkVariableReadPermission.Everyone,
@@ -38,13 +34,12 @@ namespace Script.player
         private void Awake()
         {
             weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
+            playerMenu.EnsureNotNull();
             entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
             handWeapon.EnsureNotNull();
-            playerCamera.EnsureNotNull();
-            playerMove.EnsureNotNull();
-
-            playerInfo.EnsureNotNull().changesStatsEvent.AddListener((heal, ammo, stock) =>
-                entryPoint.ChangeStats(heal, ammo, stock)
+            playerInfo.EnsureNotNull().changesStatsEvent.AddListener(
+                (heal, ammo, stock) =>
+                    entryPoint.ChangeStats(heal, ammo, stock)
             );
         }
 
@@ -52,11 +47,12 @@ namespace Script.player
         {
             entryPoint.weaponId?.AddListener(id =>
                 {
-                    if(IsOwner)
+                    if (IsOwner)
                     {
                         weaponId.Value = id;
                         StartCoroutine(GrabWeaponAsync());
-                        moveEvent.Invoke();
+                        playerMenu.Menu(true);
+                        input = new KeyBoardInput();
                     }
                 }
             );
@@ -75,8 +71,17 @@ namespace Script.player
             handWeapon.Grab(weaponDictionary.GetWeapon(weaponId.Value));
             GrabWeaponClientRpc();
         }
+
+        [ClientRpc]
+        private void GrabWeaponClientRpc() => handWeapon.Grab(weaponDictionary.GetWeapon(weaponId.Value));
         
-        [ClientRpc] private void GrabWeaponClientRpc() => handWeapon.Grab(weaponDictionary.GetWeapon(weaponId.Value));
-        
+        private void Update()
+        {
+            if (IsOwner && input.KeyEscape())
+            {
+                playerMenu.Menu();;
+                entryPoint.menuEvent.Invoke();
+            }
+        }
     }
 }

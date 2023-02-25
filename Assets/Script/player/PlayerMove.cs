@@ -2,6 +2,7 @@
 using Script.Other;
 using Cinemachine;
 using Script.player.Inputs.Keyboard;
+using Script.player.PlayerBody;
 using Script.player.PlayerBody.Jump;
 using Unity.Netcode;
 using UnityEngine;
@@ -17,8 +18,7 @@ namespace Script.player
         [SerializeField] private float powerJump;
         [SerializeField] private float speed;
         [SerializeField] private float gravity;
-        [SerializeField] private Player player = null!;
-        
+
         private IInput input = new PlugInput();
         private CharacterController characterController = null!;
 
@@ -26,22 +26,18 @@ namespace Script.player
             Vector3.zero,
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner);
-        
+
         private void Awake()
         {
             characterController = GetComponent<CharacterController>().EnsureNotNull();
-            player.EnsureNotNull();
             jump.EnsureNotNull();
         }
 
-        private void Start()
+        public override void OnNetworkSpawn()
         {
-            player.moveEvent.AddListener(() =>
-                {
-                    if (!IsOwner) return;
-                    input = new KeyBoardInput();
-                }
-            );
+            base.OnNetworkSpawn();
+            if (!IsOwner) return;
+            input = new KeyBoardInput();
         }
 
         private void Update()
@@ -52,7 +48,7 @@ namespace Script.player
                 var z = input.MoveVerticalZ();
 
                 move.Value = Quaternion.Euler(0, Camera.transform.rotation.eulerAngles.y, 0) * new Vector3(x, 0, z);
-                if (jump.Jump() && input.KeySpace())
+                if (jump.CanJump() && input.KeySpace())
                 {
                     JumpPlayer();
                 }
@@ -72,11 +68,5 @@ namespace Script.player
                 move.Value += new Vector3(0, powerJump, 0);
             }
         }
-
-        // public void MoveInput()
-        // {
-        //     if(!IsOwner) return;
-        //     input = new KeyBoardInput();
-        // }
     }
 }

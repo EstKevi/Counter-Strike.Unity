@@ -9,5 +9,7 @@ namespace Script.player.Inputs.Keyboard
         public bool KeySpace();
 
         public bool KeyR();
+
+        public bool KeyEscape();
     }
 }

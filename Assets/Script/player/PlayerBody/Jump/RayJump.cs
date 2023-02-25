@@ -17,6 +17,6 @@ namespace Script.player.PlayerBody.Jump
             canJump.Value = Physics.Raycast(transform.position, Vector3.down, out _, maxDistance);
         }
 
-        public bool Jump() => IsOwner && canJump.Value;
+        public bool CanJump() => IsOwner && canJump.Value;
     }
 }

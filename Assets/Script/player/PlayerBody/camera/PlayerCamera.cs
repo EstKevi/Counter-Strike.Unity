@@ -30,17 +30,6 @@ namespace Script.player.PlayerBody.camera
             cinemachineVirtualCamera.EnsureNotNull();
             player.EnsureNotNull();
         }
-        
-        private void Start()
-        {
-            player.moveEvent.AddListener(() =>
-                {
-                    if (!IsOwner) return;
-                    mouseInput = new KeyMouseInput();
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
-            );
-        }
 
         public override void OnNetworkSpawn()
         {
@@ -48,6 +37,10 @@ namespace Script.player.PlayerBody.camera
             if (!IsOwner)
             {
                 cinemachineVirtualCamera.enabled = false;
+            }
+            else
+            {
+                mouseInput = new KeyMouseInput();
             }
         }
 
@@ -69,13 +62,6 @@ namespace Script.player.PlayerBody.camera
                 transform.rotation = Quaternion.Euler(mouseValueX.Value, mouseValueY.Value, 0);
             }
         }
-
-        // public void MoveInput()
-        // {
-        //     if(!IsOwner) return;
-        //     mouseInput = new KeyMouseInput();
-        //     Cursor.lockState = CursorLockMode.Locked;
-        // }
     }
 }
 

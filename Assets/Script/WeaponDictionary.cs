@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Script.weapon;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,13 +10,18 @@ namespace Script
     {
         [SerializeField] private GameObject[] weapons = Array.Empty<GameObject>();
         private readonly Dictionary<string, GameObject> weaponKode = new();
+        private const string weaponKey = "weaponKey";
 
         public int CountWeaponDictionary => weaponKode.Count;
         private void Awake()
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                weaponKode.Add($"weaponKey{i}", weapons[i]);
+                weaponKode.Add($"{weaponKey}:{i}", weapons[i]);
+                if (!weaponKode[$"{weaponKey}:{i}"].TryGetComponent<IGun>(out _))
+                {
+                    throw new Exception("in Dictionary must be only weapon");
+                }
             }
         }
 
@@ -23,19 +29,10 @@ namespace Script
          {
              if (weaponKeycode >= 0 && weaponKeycode <= weaponKode.Count)
              {
-                 return weaponKode[$"weaponKey{weaponKeycode}"];
+                 return weaponKode[$"{weaponKey}:{weaponKeycode}"];
              }
 
-             return weaponKode["weaponKey0"];
-         }
-
-         [ContextMenu(nameof(CheckWeaponInDictionary))]
-         private void CheckWeaponInDictionary()
-         {
-             for (int i = 0; i < CountWeaponDictionary; i++)
-             {
-                 Debug.Log($"ID: {i} | {GetWeapon(i).name}");
-             }
+             return weaponKode[$"{weaponKey}0"];
          }
     }
 }

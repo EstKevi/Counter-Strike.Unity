@@ -246,12 +246,12 @@ GameObject:
   - component: {fileID: 8225736895117926422}
   - component: {fileID: 8225736895117926423}
   - component: {fileID: 159171917604673863}
+  - component: {fileID: 7389971007483318798}
   - component: {fileID: 4633413037540180092}
   - component: {fileID: 9180107482092227737}
   - component: {fileID: 7200767435688185878}
   - component: {fileID: 1046450307638126036}
   - component: {fileID: 3171699798026597773}
-  - component: {fileID: 8166699289326927592}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -267,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8225736895117926421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -399,13 +399,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 0}
   playerInfo: {fileID: 1046450307638126036}
-  playerCamera: {fileID: 2347071024202976420}
   handWeapon: {fileID: 9180107482092227737}
-  playerMove: {fileID: 7200767435688185878}
+  playerMenu: {fileID: 7389971007483318798}
   weaponDictionary: {fileID: 0}
-  moveEvent:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &7389971007483318798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fff83424c9af504fbac8715a099061a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 2347071024202976420}
+  playerMove: {fileID: 7200767435688185878}
+  handWeapon: {fileID: 9180107482092227737}
 --- !u!114 &4633413037540180092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +465,6 @@ MonoBehaviour:
   powerJump: 21.4
   speed: 10
   gravity: 4.83
-  player: {fileID: 159171917604673863}
 --- !u!114 &1046450307638126036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,20 +500,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 1.1
   canJump:
-    m_InternalValue: 0
---- !u!114 &8166699289326927592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225736895117926421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b2522f510341049059c868f7154d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponDictionary: {fileID: 0}
-  handWeapon: {fileID: 9180107482092227737}
-  weaponCode:
     m_InternalValue: 0

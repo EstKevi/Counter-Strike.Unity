@@ -1,3 +1,4 @@
+using System;
 using Script.Other;
 using Script.player.Inputs;
 using Script.player.Inputs.Keyboard;
@@ -12,7 +13,7 @@ namespace Script.player.PlayerBody.Hand
     {
         [SerializeField] private PlayerRaycast playerRaycast;
         [SerializeField] private GameObject hand;
-        // private GameObject weaponObject;
+        
         private IInputMouse inputMouse = new PlugMouseInput();
         private IInput keyBoardInput = new PlugInput();
         private IGun weaponInHand;
@@ -29,12 +30,11 @@ namespace Script.player.PlayerBody.Hand
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
-            if (!IsOwner) return;
-            
+            if(!IsOwner) return;
             inputMouse = new KeyMouseInput();
             keyBoardInput = new KeyBoardInput();
         }
-        
+
         public bool Grab(GameObject weaponPrefab)
         {
             if (weaponInHand != null) return false;
