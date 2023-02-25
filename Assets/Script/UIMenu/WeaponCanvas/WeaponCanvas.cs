@@ -5,11 +5,11 @@ namespace Script.UIMenu.WeaponCanvas
 {
     public class WeaponCanvas : MonoBehaviour
     {
-        public UnityEvent<int> chooseWeaponEvent = new();
+        public UnityEvent<int> chooseUiWeapon = new();
 
         private void Start()
         {
-            chooseWeaponEvent.AddListener(_ => gameObject.SetActive(false));
+            chooseUiWeapon.AddListener(_ => gameObject.SetActive(false));
         }
     }
 }

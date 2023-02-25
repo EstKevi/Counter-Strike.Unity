@@ -17,7 +17,7 @@ namespace Script.Other
         [SerializeField] private PlayerInterface playerInterface;
         [SerializeField] private WeaponCanvas weaponCanvas;
         public UnityEvent startGameUnityEvent = new();
-        public UnityEvent<int> weaponId = new();
+        public UnityEvent<int> chooseWeapon = new();
         public UnityEvent menuEvent = new();
 
         private void Awake()
@@ -38,9 +38,9 @@ namespace Script.Other
                 }
             );
 
-            weaponCanvas.chooseWeaponEvent.AddListener(arg0 =>
+            weaponCanvas.chooseUiWeapon.AddListener(arg0 =>
                 {
-                    weaponId.Invoke(arg0);
+                    chooseWeapon.Invoke(arg0);
                     weaponCanvas.gameObject.SetActive(false);
                     playerInterface.gameObject.SetActive(true);
                 }

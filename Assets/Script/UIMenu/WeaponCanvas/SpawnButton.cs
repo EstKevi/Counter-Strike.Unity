@@ -18,7 +18,7 @@ namespace Script.UIMenu.WeaponCanvas
                 var weaponKey = i;
                 var button = Instantiate(buttonWeaponPrefab, transform);
                 button.SetValue(weaponDictionary.GetWeapon(weaponKey));
-                button.GetComponent<Button>().onClick.AddListener(() => weaponCanvas.chooseWeaponEvent.Invoke(weaponKey));
+                button.GetComponent<Button>().onClick.AddListener(() => weaponCanvas.chooseUiWeapon.Invoke(weaponKey));
             }
         }
     }

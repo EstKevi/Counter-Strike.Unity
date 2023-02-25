@@ -6,23 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/IInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoaredInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/KeyBoaredInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Inputs/Keyboard/PlugInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/WeaponCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/WeaponCanvas.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Jump/RayJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Jump/RayJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/camera/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/camera/PlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

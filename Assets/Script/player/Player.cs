@@ -45,7 +45,7 @@ namespace Script.player
 
         private void Start()
         {
-            entryPoint.weaponId?.AddListener(id =>
+            entryPoint.chooseWeapon?.AddListener(id =>
                 {
                     if (IsOwner)
                     {
