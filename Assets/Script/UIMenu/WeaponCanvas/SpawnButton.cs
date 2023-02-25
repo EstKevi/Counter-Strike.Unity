@@ -1,4 +1,5 @@
 using Script.Other;
+using Script.weapon;
 using UnityEngine;
 using UnityEngine.UI;
 

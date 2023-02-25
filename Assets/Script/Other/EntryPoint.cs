@@ -20,6 +20,8 @@ namespace Script.Other
         public UnityEvent<int> chooseWeapon = new();
         public UnityEvent menuEvent = new();
 
+        public NetworkManager EntryManager => networkManager;
+
         private void Awake()
         {
             playerInterface.EnsureNotNull();

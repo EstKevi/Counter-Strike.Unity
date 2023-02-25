@@ -1,11 +1,12 @@
-using System.Collections;
+using Script.player.Inputs.Keyboard;
 using Script.player.PlayerBody.Hand;
 using Script.player.PlayerBody.heal;
 using Unity.Netcode.Components;
+using Script.player.Menu;
+using System.Collections;
+using Script.weapon;
 using Unity.Netcode;
 using Script.Other;
-using Script.player.Inputs.Keyboard;
-using Script.player.Menu;
 using UnityEngine;
 
 namespace Script.player
@@ -13,6 +14,7 @@ namespace Script.player
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(NetworkTransform))]
     [RequireComponent(typeof(NetworkObject))]
+    [RequireComponent(typeof(PlayerMenu))]
     [RequireComponent(typeof(PlayerMove))]
     [RequireComponent(typeof(PlayerInfo))]
     [RequireComponent(typeof(HandWeapon))]
@@ -23,8 +25,8 @@ namespace Script.player
         [SerializeField] private PlayerInfo playerInfo;
         [SerializeField] private HandWeapon handWeapon;
         [SerializeField] private PlayerMenu playerMenu;
-        [SerializeField] private WeaponDictionary weaponDictionary;
-
+        
+        private WeaponDictionary weaponDictionary;
         private IInput input = new PlugInput();
         private NetworkVariable<int> weaponId = new(
             0,
@@ -33,7 +35,6 @@ namespace Script.player
 
         private void Awake()
         {
-            weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
             playerMenu.EnsureNotNull();
             entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
             handWeapon.EnsureNotNull();
@@ -52,10 +53,16 @@ namespace Script.player
                         weaponId.Value = id;
                         StartCoroutine(GrabWeaponAsync());
                         playerMenu.Menu(true);
-                        input = new KeyBoardInput();
+                        input = new KeyBoardInput();;
                     }
                 }
             );
+        }
+
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+            weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
         }
 
         private IEnumerator GrabWeaponAsync()

@@ -1,5 +1,6 @@
 using System.Collections;
 using Script.player.PlayerBody.Hand;
+using Script.weapon;
 using Unity.Netcode;
 using UnityEngine;
 
