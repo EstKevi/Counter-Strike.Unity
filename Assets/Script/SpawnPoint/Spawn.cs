@@ -10,37 +10,33 @@ namespace Script.SpawnPoint
     public class Spawn : NetworkBehaviour
     {
         [SerializeField] private List<SpawnPoint> spawnPoints = new();
-        [SerializeField] private EntryPoint entryPoint;
+        [SerializeField] private NetworkManager networkManager;
 
         private void Awake()
         {
-            entryPoint.EnsureNotNull();
+            networkManager.EnsureNotNull();
             
             foreach (var points in FindObjectsOfType<SpawnPoint>())
                 spawnPoints.Add(points);
-            
+
             if (spawnPoints.Count == 0)
+            {
                 Debug.LogWarning("SpawnPoints not found");
-            
-            entryPoint.EntryManager.OnClientConnectedCallback += SpawnPlayer;
+            }
         }
 
-        public void SpawnPlayer(ulong id)
+        public Transform GiveSpawnPoint()
         {
-            if (spawnPoints.Count == 0) return;
-            
-            var player = entryPoint.EntryManager.ConnectedClients[id];
             foreach (var point in spawnPoints)
             {
-                if (!point.PlayersInPoint)
+                if (point.PlayersInPoint is false)
                 {
-                    player.PlayerObject.transform.position = point.transform.position;
-                    return;
+                    return point.transform;
                 }
             }
-
+            
             var index = Random.Range(0, spawnPoints.Count);
-            player.PlayerObject.transform.position = spawnPoints[index].gameObject.transform.position;
+            return spawnPoints[index].transform;
         }
     }
 }

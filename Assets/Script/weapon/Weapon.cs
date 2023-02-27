@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Script.player.heal;
 using Unity.Netcode;
@@ -13,12 +14,12 @@ namespace Script.weapon
         [SerializeField] private int damage;
         [SerializeField] private float shootSpeed, reloadSpeed;
         [SerializeField] private bool canShoot, canReload;
-        public UnityEvent particleShootEvent = new();
-        public UnityEvent<float> reloadWeaponEvent = new();
-        
         private float previousShot;
-        private int originalMeaningAmmo;
-
+        private int originalValueAmmo, originalValueStock;
+        
+        [NonSerialized] public UnityEvent particleShootEvent = new();
+        [NonSerialized] public UnityEvent<float> reloadWeaponEvent = new();
+        
         public int Ammo => ammo.Value;
 
         public int Stock
@@ -27,7 +28,17 @@ namespace Script.weapon
             set => stock.Value = value;
         }
 
-        private void Awake() => originalMeaningAmmo = ammo.Value;
+        private void Awake()
+        {
+            originalValueAmmo = ammo.Value;
+            originalValueStock = stock.Value;
+        }
+
+        public void ResetWeapon()
+        {
+            ammo.Value = originalValueAmmo;
+            stock.Value = originalValueStock;
+        }
 
         // ReSharper disable Unity.PerformanceAnalysis
         public void Shoot(Collider obj)
@@ -39,7 +50,6 @@ namespace Script.weapon
             }
 
             if (!(Time.time - previousShot > shootSpeed)) return;
-            print("bang");
             ammo.Value--;
             previousShot = Time.time;
             particleShootEvent.Invoke();
@@ -50,7 +60,7 @@ namespace Script.weapon
 
         public void Reload()
         {
-            if (canReload && ammo.Value < originalMeaningAmmo && stock.Value != 0)
+            if (canReload && ammo.Value < originalValueAmmo && stock.Value != 0)
             {
                 StartCoroutine(ReloadWeapon());
             }
@@ -63,7 +73,7 @@ namespace Script.weapon
             
             yield return new WaitForSecondsRealtime(reloadSpeed);
 
-            var cartridges = originalMeaningAmmo - ammo.Value;
+            var cartridges = originalValueAmmo - ammo.Value;
 
             while (stock.Value - cartridges < 0)
             {

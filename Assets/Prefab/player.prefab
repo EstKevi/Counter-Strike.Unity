@@ -198,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6805225756052748577}
   m_LocalRotation: {x: -0.0000000018626451, y: 0.031646635, z: 0.00000000372529, w: 0.99949914}
-  m_LocalPosition: {x: 0.393, y: -0.21, z: 0.654}
+  m_LocalPosition: {x: 0.393, y: -0.21000001, z: 0.654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,6 +252,8 @@ GameObject:
   - component: {fileID: 7200767435688185878}
   - component: {fileID: 1046450307638126036}
   - component: {fileID: 3171699798026597773}
+  - component: {fileID: 4852158519472669233}
+  - component: {fileID: 3007811269656276475}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -377,9 +379,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
@@ -398,10 +400,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 0}
-  playerInfo: {fileID: 1046450307638126036}
+  playerStatistics: {fileID: 1046450307638126036}
   handWeapon: {fileID: 9180107482092227737}
-  playerMenu: {fileID: 7389971007483318798}
-  weaponDictionary: {fileID: 0}
+  playerMoveSettings: {fileID: 7389971007483318798}
+  respawn: {fileID: 3007811269656276475}
+  spawn: {fileID: 0}
 --- !u!114 &7389971007483318798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,3 +504,35 @@ MonoBehaviour:
   maxDistance: 1.1
   canJump:
     m_InternalValue: 0
+--- !u!114 &4852158519472669233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cc38cbcf2759840b33718c5d3ef0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 4633413037540180092}
+  player: {fileID: 159171917604673863}
+  respawn: {fileID: 3007811269656276475}
+  handWeapon: {fileID: 9180107482092227737}
+--- !u!114 &3007811269656276475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225736895117926421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4bdd4d3ec845c78ca58fcf1b22463e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeForRespawn: 0.2
+  playerRespawned:
+    m_PersistentCalls:
+      m_Calls: []

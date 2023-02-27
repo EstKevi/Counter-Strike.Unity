@@ -1,4 +1,3 @@
-using System;
 using Script.player.heal;
 using Unity.Netcode;
 using UnityEngine;
@@ -23,10 +22,12 @@ namespace Script.player.PlayerBody.heal
             get => heal.Value;
             set
             {
-                if (heal.Value >= 100) return;
+                if (heal.Value >= firstValueHealth) return;
                 
-                while (heal.Value + value > 100)
+                while (heal.Value + value > firstValueHealth)
+                {
                     --value;
+                }
                 heal.Value += value;
             }
         }
@@ -35,16 +36,18 @@ namespace Script.player.PlayerBody.heal
         {
             if (!IsOwner) return;
             heal.Value -= damage;
-            heal.Value =  Mathf.Clamp(heal.Value, 0, firstValueHealth);
-            if(heal.Value <= 0) playerDeath.Invoke();
+            heal.Value = Mathf.Clamp(heal.Value, 0, firstValueHealth);
+            
+            if(heal.Value <= 0)
+            {
+                playerDeath.Invoke();
+            }
         }
 
-        private void OnDisable()
+        public void ResetHealth()
         {
-            if (IsOwner)
-            {
-                heal.Value = firstValueHealth;
-            }
+            if (!IsOwner) return;
+            heal.Value = firstValueHealth;
         }
     }
 }

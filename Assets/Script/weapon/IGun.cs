@@ -6,6 +6,7 @@ namespace Script.weapon
     {
         void Shoot(Collider _);
         void Reload();
+        void ResetWeapon();
 
         public int Ammo { get; }
         public int Stock { get; set; }

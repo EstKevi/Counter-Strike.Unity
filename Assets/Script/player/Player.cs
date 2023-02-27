@@ -2,11 +2,13 @@ using Script.player.Inputs.Keyboard;
 using Script.player.PlayerBody.Hand;
 using Script.player.PlayerBody.heal;
 using Unity.Netcode.Components;
-using Script.player.Menu;
 using System.Collections;
 using Script.weapon;
 using Unity.Netcode;
 using Script.Other;
+using Script.player.PlayerMove;
+using Script.player.RespawnPlayer;
+using Script.SpawnPoint;
 using UnityEngine;
 
 namespace Script.player
@@ -14,31 +16,37 @@ namespace Script.player
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(NetworkTransform))]
     [RequireComponent(typeof(NetworkObject))]
-    [RequireComponent(typeof(PlayerMenu))]
-    [RequireComponent(typeof(PlayerMove))]
-    [RequireComponent(typeof(PlayerInfo))]
+    [RequireComponent(typeof(PlayerMoveSettings))]
+    [RequireComponent(typeof(PlayerStatistics))]
     [RequireComponent(typeof(HandWeapon))]
     [RequireComponent(typeof(Health))]
     public class Player : NetworkBehaviour
     {
         [SerializeField] private EntryPoint entryPoint;
-        [SerializeField] private PlayerInfo playerInfo;
+        [SerializeField] private PlayerStatistics playerStatistics;
         [SerializeField] private HandWeapon handWeapon;
-        [SerializeField] private PlayerMenu playerMenu;
+        [SerializeField] private PlayerMoveSettings playerMoveSettings;
+        [SerializeField] private Respawn respawn;
+        [SerializeField] private Spawn spawn;
+        
+        private const float WaitForGiveWeapon = 0.1f;
         
         private WeaponDictionary weaponDictionary;
         private IInput input = new PlugInput();
         private NetworkVariable<int> weaponId = new(
-            0,
+            1,
             NetworkVariableReadPermission.Everyone,
             NetworkVariableWritePermission.Owner);
 
         private void Awake()
         {
-            playerMenu.EnsureNotNull();
+            weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
             entryPoint = FindObjectOfType<EntryPoint>().EnsureNotNull();
+            playerMoveSettings.EnsureNotNull();
+            spawn = FindObjectOfType<Spawn>();
             handWeapon.EnsureNotNull();
-            playerInfo.EnsureNotNull().changesStatsEvent.AddListener(
+            
+            playerStatistics.EnsureNotNull().changesStatsEvent.AddListener(
                 (heal, ammo, stock) =>
                     entryPoint.ChangeStats(heal, ammo, stock)
             );
@@ -52,8 +60,7 @@ namespace Script.player
                     {
                         weaponId.Value = id;
                         StartCoroutine(GrabWeaponAsync());
-                        playerMenu.Menu(true);
-                        input = new KeyBoardInput();;
+                        playerMoveSettings.ChangeMoveSettings(true);
                     }
                 }
             );
@@ -62,13 +69,25 @@ namespace Script.player
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
-            weaponDictionary = FindObjectOfType<WeaponDictionary>().EnsureNotNull();
+            if (IsOwner)
+            {
+                input = new KeyBoardInput();
+                respawn.RespawnPlayer(spawn.GiveSpawnPoint());
+            }
         }
 
+        public void RespawnPlayer()
+        {
+            if (IsOwner)
+            {
+                respawn.RespawnPlayer(spawn.GiveSpawnPoint());
+            }
+        }
+        
         private IEnumerator GrabWeaponAsync()
         {
             if (!IsOwner) yield return null;
-            yield return null;
+            yield return new WaitForSecondsRealtime(WaitForGiveWeapon);
             GrabWeaponServerRpc();
         }
 
@@ -79,14 +98,13 @@ namespace Script.player
             GrabWeaponClientRpc();
         }
 
-        [ClientRpc]
-        private void GrabWeaponClientRpc() => handWeapon.Grab(weaponDictionary.GetWeapon(weaponId.Value));
-        
+        [ClientRpc] private void GrabWeaponClientRpc() => handWeapon.Grab(weaponDictionary.GetWeapon(weaponId.Value));
+
         private void Update()
         {
-            if (IsOwner && input.KeyEscape())
+            if (input.KeyEscape() && IsOwner)
             {
-                playerMenu.Menu();;
+                playerMoveSettings.ChangeMoveSettings();
                 entryPoint.menuEvent.Invoke();
             }
         }

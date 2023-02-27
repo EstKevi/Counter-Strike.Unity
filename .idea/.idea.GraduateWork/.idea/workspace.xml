@@ -6,20 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="ed639780-c4f4-4f18-8bb7-f821d164a9c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraduateWork/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/spawnPoint/SpawnPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/spawnPoint/SpawnPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/weapon/AK-47/AK-47.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/weapon/M4/M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/weapon/M4/M4.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GAME.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Other/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Other/GiveWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Other/GiveWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/UIMenu/WeaponCanvas/SpawnButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/WeaponDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/WeaponDictionary.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/WeaponDictionary.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SpawnPoint/Spawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SpawnPoint/Spawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SpawnPoint/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SpawnPoint/SpawnPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Menu/PlayerMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/Menu/PlayerMenu.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/Hand/HandWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/heal/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/player/PlayerBody/heal/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/player/PlayerMove.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/IGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/IGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/weapon/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/other/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Plugins/x86_64/lib_burst_generated.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/Plugins/x86_64/lib_burst_generated.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/globalgamemanagers.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/level0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/resources.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/BuildGame/GraduateWork_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +51,22 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/mainMenu/WindowsUI/CloseWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/mainMenu/WindowsUI/OnDragWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/UIMenu/playerCanvas/PlayerInterface.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Menu/PlayerMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Death/PlayerDeath.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/IInputMouse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/KeyMouseInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/Inputs/Mouse/PlugMouseInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/player/PlayerMove/PlayerMoveSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/weapon/Animation/AnimationReloadWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/weapon/WeaponDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.2/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.6/Unity.Mathematics/bool2.gen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Components/NetworkTransform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Editor/NetworkBehaviourEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Core/NetworkBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Core/NetworkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Core/NetworkObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Messaging/Messages/RpcMessages.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Messaging/MessagingSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/NetworkVariable/NetworkVariable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/NetworkVariable/NetworkVariableBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Spawning/NetworkSpawnManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -193,6 +214,11 @@
       <workItem from="1677169344872" duration="3992000" />
       <workItem from="1677178141546" duration="19155000" />
       <workItem from="1677298034356" duration="6289000" />
+      <workItem from="1677397060488" duration="12688000" />
+      <workItem from="1677417108341" duration="15000" />
+      <workItem from="1677419465917" duration="6163000" />
+      <workItem from="1677474263809" duration="7301000" />
+      <workItem from="1677506711912" duration="3060000" />
     </task>
     <servers />
   </component>

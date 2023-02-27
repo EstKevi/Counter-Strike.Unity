@@ -1,4 +1,3 @@
-using System;
 using Script.Other;
 using Script.player.Inputs;
 using Script.player.Inputs.Keyboard;
@@ -9,6 +8,7 @@ using UnityEngine;
 
 namespace Script.player.PlayerBody.Hand
 {
+    [RequireComponent(typeof(Player))]
     public class HandWeapon : NetworkBehaviour
     {
         [SerializeField] private PlayerRaycast playerRaycast;
@@ -18,21 +18,21 @@ namespace Script.player.PlayerBody.Hand
         private IInput keyBoardInput = new PlugInput();
         private IGun weaponInHand;
 
-        public int WeaponAmmo { get; private set; }
         public int WeaponStock { get; private set; }
+        public int WeaponAmmo { get; private set; }
 
         private void Awake()
         {
-            hand.EnsureNotNull();
             playerRaycast.EnsureNotNull();
+            hand.EnsureNotNull();
         }
 
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
             if(!IsOwner) return;
-            inputMouse = new KeyMouseInput();
             keyBoardInput = new KeyBoardInput();
+            inputMouse = new KeyMouseInput();
         }
 
         public bool Grab(GameObject weaponPrefab)
@@ -48,6 +48,21 @@ namespace Script.player.PlayerBody.Hand
             if (weaponInHand == null) return false;
             weaponInHand.Stock += ammo;
             return true;
+        }
+
+        [ServerRpc]
+        private void ResetWeaponServerRpc()
+        {
+            weaponInHand.ResetWeapon();
+            ResetWeaponClientRpc();
+        }
+        [ClientRpc] private void ResetWeaponClientRpc() => weaponInHand.ResetWeapon();
+        
+        
+        public void ResetWeapon()
+        {
+            if(IsOwner)
+                ResetWeaponServerRpc();
         }
 
         [ServerRpc]
@@ -70,7 +85,6 @@ namespace Script.player.PlayerBody.Hand
         private void Update()
         {
             if (weaponInHand == null || !IsOwner) return;
-            
             if (inputMouse.MouseLeftButton())
             {
                 ShootServerRpc();
@@ -81,8 +95,8 @@ namespace Script.player.PlayerBody.Hand
                 ReloadServerRpc();
             }
             
-            WeaponAmmo = weaponInHand.Ammo;
             WeaponStock = weaponInHand.Stock;
+            WeaponAmmo = weaponInHand.Ammo;
         }
     }
 }

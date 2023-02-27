@@ -1,23 +1,30 @@
-using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
 namespace Script.SpawnPoint
 {
-    [RequireComponent(typeof(NetworkObject))]
-    [RequireComponent(typeof(Collider))]
     public class SpawnPoint : NetworkBehaviour
     {
         [SerializeField] private NetworkVariable<bool> playersInPoint = new();
+
+        private void Awake() => GetComponent<MeshRenderer>().enabled = false;
+
         public bool PlayersInPoint => playersInPoint.Value;
-        private void OnTriggerStay(Collider other)
+
+        private void OnTriggerStay(Collider _)
         {
-            playersInPoint.Value = true;
+            if (IsServer)
+            {
+                playersInPoint.Value = true;
+            }
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerExit(Collider _)
         {
-            playersInPoint.Value = false;
+            if(IsServer)
+            {
+                playersInPoint.Value = false;
+            }
         }
     }
 }

@@ -95,17 +95,11 @@ MonoBehaviour:
     m_InternalValue: 30
   stock:
     m_InternalValue: 90
-  damage: 27
+  damage: 15
   shootSpeed: 0.19
   reloadSpeed: 3.25
   canShoot: 1
   canReload: 1
-  particleShootEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  reloadWeaponEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2347910351606878484
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3296266918280768382}
   - component: {fileID: 3296266918280768383}
   - component: {fileID: 3296266918280768376}
-  - component: {fileID: 3296266918280768377}
-  m_Layer: 0
+  - component: {fileID: 4409602815187471977}
+  m_Layer: 2
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3296266918280768379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19.200743, y: 19.200743, z: 19.200743}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &3296266918280768377
+--- !u!114 &4409602815187471977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
